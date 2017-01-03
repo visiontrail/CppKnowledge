@@ -4,6 +4,9 @@
 #include "stdafx.h"
 #include <iostream>
 #include <vector>
+#include <sstream>
+
+#include "STL_Learn.h"
 
 using namespace std;
 
@@ -39,6 +42,16 @@ int main()
 	{
 		std::cout << "Split result is " << res[i].c_str() << endl;
 	}
+
+	strvec vec1;
+
+	vec1.vectorinit();
+
+	for (vector<std::string>::iterator iter = vec1.strvector.begin(); iter != vec1.strvector.end();++iter)
+	{
+		std::cout << iter->c_str() << endl;
+	}
+	
 	system("pause");
     return 0;
 }
