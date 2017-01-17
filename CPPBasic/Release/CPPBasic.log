@@ -1,19 +1,13 @@
-﻿生成启动时间为 2017/1/16 17:29:58。
+﻿生成启动时间为 2017/1/17 17:30:06。
      1>项目“E:\WorkSpace\Personal\Learn\cpp\stl_learn\CPPBasic\CPPBasic.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"stdafx.h" /Fp"Release\CPPBasic.pch" /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt CPPBasic.cpp
          CPPBasic.cpp
-       Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\WorkSpace\Personal\Learn\cpp\stl_learn\Release\CPPBasic.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"E:\WorkSpace\Personal\Learn\cpp\stl_learn\Release\CPPBasic.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\WorkSpace\Personal\Learn\cpp\stl_learn\Release\CPPBasic.lib" /MACHINE:X86 /SAFESEH Release\CPPBasic.obj
-         Release\stdafx.obj
-         正在生成代码
-         已完成代码的生成
-         1 of 11 functions ( 9.1%) were compiled, the rest were copied from previous compilation.
-           0 functions were new in current compilation
-           0 functions had inline decision re-evaluated but remain unchanged
-         CPPBasic.vcxproj -> E:\WorkSpace\Personal\Learn\cpp\stl_learn\Release\CPPBasic.exe
-     1>已完成生成项目“E:\WorkSpace\Personal\Learn\cpp\stl_learn\CPPBasic\CPPBasic.vcxproj”(Build 个目标)的操作。
+     1>CPPBasic.cpp(17): error C2065: “T”: 未声明的标识符
+     1>CPPBasic.cpp(17): error C2146: 语法错误: 缺少“)”(在标识符“t”的前面)
+     1>CPPBasic.cpp(29): error C3861: “UseAutoMultiply”: 找不到标识符
+     1>已完成生成项目“E:\WorkSpace\Personal\Learn\cpp\stl_learn\CPPBasic\CPPBasic.vcxproj”(Build 个目标)的操作 - 失败。
 
-已成功生成。
+生成失败。
 
-已用时间 00:00:01.30
+已用时间 00:00:00.59
