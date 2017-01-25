@@ -14,7 +14,6 @@ void ConstDefinePrint();
 
 /* 声明auto.cpp中的函数 */
 void autoUsing_JudgeType();
-void UseAutoMultiply(T t, U u);
 
 int main()
 {
@@ -26,7 +25,6 @@ int main()
 
 	//----auto关键字;---------
 	autoUsing_JudgeType();
-	UseAutoMultiply(3.14, 10);
 	//----auto关键字;---------
 
 	std::system("pause");
