@@ -1,11 +1,7 @@
 #pragma once
 
-void vectortry();
-
 class strvec
 {
-	
-
 public:
 	strvec() = default;
 	void vectorinit();

@@ -27,6 +27,9 @@
     <ClInclude Include="STL_Learn.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Vector_etc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

@@ -4,8 +4,33 @@
 #include <sstream>
 
 #include "STL_Learn.h"
+#include "Vector_etc.h"
 
 using namespace std;
+
+// ²ð·Ö×Ö·û´®;
+vector<std::string> SplitStr(std::string inputstr, std::string splitstr)
+{
+	std::vector<std::string> res;
+	inputstr += splitstr;
+	if (splitstr.empty())
+	{
+		return res;
+	}
+	for (int i = 0; i < (int)inputstr.size(); ++i)
+	{
+		int postion = inputstr.find(splitstr, i);
+		if (postion < (int)inputstr.size())
+		{
+			std::string tempstr = inputstr.substr(i, postion - i);
+			res.push_back(tempstr);
+			i = postion + (splitstr.size() - 1);
+		}
+
+	}
+
+	return res;
+}
 
 void int2str(const int &int_temp, string &string_temp)
 {
