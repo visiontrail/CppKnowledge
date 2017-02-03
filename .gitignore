@@ -3,6 +3,7 @@
 
 /ipch
 /.vs
+/x64
 
 /CPPBasic/Debug
 /CPPBasic/Release
