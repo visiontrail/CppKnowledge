@@ -22,6 +22,7 @@ public:
 	}
 	
 	vector<Bookinfo> Strinit();
+	void GetUserInput();
 
 	// 重载大于小于运算符;
 	// 这样一来，Bookinfo可以使用>或<直接比较

@@ -149,6 +149,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="array.cpp" />
     <ClCompile Include="auto.cpp" />
     <ClCompile Include="const.cpp" />
     <ClCompile Include="CPPBasic.cpp" />

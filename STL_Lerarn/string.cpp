@@ -24,3 +24,29 @@ vector<Bookinfo> Bookinfo::Strinit()
 
 	return BKinfo;
 }
+
+// 使用getline获取用户输入;
+void Bookinfo::GetUserInput()
+{
+	string line;
+	string::size_type len;
+
+	while (getline(std::cin, line))
+	{
+		for (auto &c : line)
+		{
+			c = toupper(c);
+		}
+
+		std::cout << line << std::endl;
+		len = line.size();
+		auto len2 = line.size();
+		// 从“size_t”转换到“int”，可能丢失数据;
+		//int len3 = line.size();
+		std::cout << "输入的字符长度为;" << len2 << std::endl;
+
+		return;
+	}
+
+	return;
+}

@@ -33,7 +33,11 @@ int main()
 	vec1.vectorinit();
 	for (vector<std::string>::iterator iter = vec1.strvector.begin(); iter != vec1.strvector.end();++iter)
 	{
-		std::cout << iter->c_str() << endl;
+		std::cout << "使用iterator迭代;" << iter->c_str() << endl;
+	}
+	for (auto c : vec1.strvector)
+	{
+		std::cout << "新的迭代方法;" << c.c_str() << endl;
 	}
 	//-----------------vector-----------------------
 
@@ -46,6 +50,8 @@ int main()
 	{
 		std::cout << "11" << std::endl;
 	}
+	std::cout << "Input Something:";
+	BKList.GetUserInput();
 	//-----------------string------------------
 
 
