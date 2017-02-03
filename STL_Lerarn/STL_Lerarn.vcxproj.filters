@@ -30,6 +30,9 @@
     <ClInclude Include="Vector_etc.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="String_l.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -39,6 +42,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Vector_etc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="string.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

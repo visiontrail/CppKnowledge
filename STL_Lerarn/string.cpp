@@ -1,3 +1,9 @@
+/*
+本文件学习的主要内容有;
+1、string的基本用法
+2、stream的基本用法
+*/
+
 #include "stdafx.h"
 #include <string>
 #include <iostream>
@@ -17,5 +23,4 @@ vector<Bookinfo> Bookinfo::Strinit()
 	BKinfo.push_back(Bookinfo("Book2", 110003, 50));
 
 	return BKinfo;
-
 }

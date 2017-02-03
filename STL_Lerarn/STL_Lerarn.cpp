@@ -5,14 +5,20 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
+#include <algorithm>
 
 #include "STL_Learn.h"
 #include "Vector_etc.h"
+#include "String_l.h"
+
 
 using namespace std;
 
 int main()
 {
+
+	//-----------------vector-----------------------
+	//利用字符串拆分学习了下vector;
 	std::string inputstr = "123//324//345/56";
 	std::string splitstr = "//";
 	std::vector<std::string> res = SplitStr(inputstr, splitstr);
@@ -23,13 +29,26 @@ int main()
 
 	strvec vec1;
 
+	// vector中使用迭代器进行迭代;
 	vec1.vectorinit();
-
 	for (vector<std::string>::iterator iter = vec1.strvector.begin(); iter != vec1.strvector.end();++iter)
 	{
 		std::cout << iter->c_str() << endl;
 	}
-	
+	//-----------------vector-----------------------
+
+
+	// ----------------string------------------
+	// 使用string中字典排序对string内容进行比较;
+	Bookinfo BKList;
+	auto Booklist = BKList.Strinit();
+	if (Booklist[1] > Booklist[2])
+	{
+		std::cout << "11" << std::endl;
+	}
+	//-----------------string------------------
+
+
 	system("pause");
     return 0;
 }
