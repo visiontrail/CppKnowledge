@@ -19,7 +19,7 @@ void autoUsing_JudgeType();
 /* 声明function.cpp中的函数 */
 string &refStringA(string&);
 // 给定了一个默认参数;
-int factorial(int val);
+int factorial(int val = 5);
 
 
 int main()
