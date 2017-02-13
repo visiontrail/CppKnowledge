@@ -13,8 +13,9 @@
 
 
 using namespace std;
+using std::string;
 
-int main()
+int main(int argc, char* args[])
 {
 
 	//-----------------vector-----------------------
@@ -58,4 +59,5 @@ int main()
 	system("pause");
     return 0;
 }
+
 

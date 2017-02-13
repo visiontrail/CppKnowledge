@@ -153,6 +153,7 @@
     <ClCompile Include="auto.cpp" />
     <ClCompile Include="const.cpp" />
     <ClCompile Include="CPPBasic.cpp" />
+    <ClCompile Include="function.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
