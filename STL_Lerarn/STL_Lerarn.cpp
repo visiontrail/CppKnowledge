@@ -22,7 +22,7 @@ int main(int argc, char* args[])
 	//利用字符串拆分学习了下vector;
 	std::string inputstr = "123//324//345/56";
 	std::string splitstr = "//";
-	std::vector<std::string> res = SplitStr(inputstr, splitstr);
+	std::vector<std::string> res = SplitStr(inputstr, "s");
 	for (int i = 0; i < (int)res.size(); ++i)
 	{
 		std::cout << "Split result is " << res[i].c_str() << endl;

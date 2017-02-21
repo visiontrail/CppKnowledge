@@ -17,7 +17,7 @@ vector<std::string> SplitStr(std::string inputstr, std::string splitstr)
 	{
 		return res;
 	}
-	for (int i = 0; i < (int)inputstr.size(); ++i)
+	for (int i = 0; i <= (int)inputstr.size(); ++i)
 	{
 		int postion = inputstr.find(splitstr, i);
 		if (postion < (int)inputstr.size())

@@ -14,6 +14,7 @@
 using namespace std;
 using std::string;
 
+// 初始化数据以便实验;
 vector<Bookinfo> Bookinfo::Strinit()
 {
 	std::vector<Bookinfo> BKinfo;

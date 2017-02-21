@@ -20,10 +20,19 @@ public:
 		this->ISBN = isbn;
 		this->Price = price;
 	}
+
+	// 析构函数;
+	~Bookinfo()
+	{
+	}
 	
+	// 初始化一个BookList用于实验;
 	vector<Bookinfo> Strinit();
+
+	// 使用getline获取用户输入;
 	void GetUserInput();
 
+	// 由于string支持字典排序;
 	// 重载大于小于运算符;
 	// 这样一来，Bookinfo可以使用>或<直接比较
 	bool operator >(const Bookinfo Bi) const

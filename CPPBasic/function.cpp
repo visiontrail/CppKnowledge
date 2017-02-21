@@ -4,11 +4,17 @@
 using namespace std;
 using std::string;
 
+/*
+函数作用：返回值为一个引用的函数;
+*/
 string &refStringA(string &str)
 {
 	return str;
 }
 
+/*
+函数作用：递归函数;
+*/
 int factorial(int val)
 {
 	if (val > 1)
