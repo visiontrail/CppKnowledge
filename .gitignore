@@ -7,12 +7,15 @@
 
 /CPPBasic/Debug
 /CPPBasic/Release
+/CPPBasic/x64
 
 /STL_Lerarn/Debug
 /STL_Lerarn/Release
-
-/CPPBasic/x64
 /STL_Lerarn/x64
+
+/Class_Learn1/Debug
+/Class_Learn1/Release
+/Class_Learn1/x64
 
 /STL_Lerarn.VC.db
 /STL_Lerarn.VC.VC.opendb
