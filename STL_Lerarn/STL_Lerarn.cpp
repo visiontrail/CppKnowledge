@@ -58,37 +58,6 @@ int main(int argc, char* args[])
 // 	BKList.GetUserInput();
 	//-----------------string------------------
 
-	//---------------类的学习;-----------------
-	//-----------str_Sales_data----------------
-	Str_Sales_data strSalesData;
-	const Str_Sales_data con_strSalesData;    //con_strSalesData是一个底层const,也就是其地址非常量;
-
-	strSalesData.Book_Isbn = "00001";
-
-	// 一个非常量对象访问了const修饰的成员函数;
-	std::string PrintBook = strSalesData.GetIsbn();
-	// 隐含了this指针的实际调用是;
-	// Sales_data::GetIsbn(&strSalesData);
-	// 一个常量对象访问了const修饰的成员函数;
-
-	std::string PrintBook2 = con_strSalesData.GetIsbn();
-	// 隐含了this指针的实际调用是;
-	// Sales_data::GetIsbn(&con_strSalesData);
-
-	// 那么用const修饰的成员函数起到了什么作用?;
-	// const修饰符起到了修改隐式this指针的类型;
-
-
-	// 一个非常量对象访问了普通的成员函数;
-	strSalesData.Average_Price();
-	// 一个常量对象访问了普通的成员函数;
-	//con_strSalesData.Average_Price();
-	std::cout << "str_Sales_data's BookIsbn:" << PrintBook << std::endl;
-
-	//-----------str_Sales_data----------------
-
-
-	//-----------str_Sales_data----------------
 	system("pause");
     return 0;
 }

@@ -5,6 +5,8 @@
 #include <iostream>
 #include <string>
 
+#include "Sales_data.h"
+
 using namespace std;
 
 // 函数声明;
@@ -52,6 +54,30 @@ int main()
 
 	//----常量指针;-------
 	Printconst();
+	//----常量指针;-------
+
+	//---------------类的学习;-----------------
+	//-----------str_Sales_data----------------
+	Str_Sales_data strSalesData;
+	const Str_Sales_data con_strSalesData;    //con_strSalesData是一个底层const,也就是其地址非常量;
+
+	strSalesData.Book_Isbn = "00001";
+
+	// 一个非常量对象访问了const修饰的成员函数;
+	std::string PrintBook = strSalesData.GetIsbn();
+	// 一个常量对象访问了const修饰的成员函数;
+	std::string PrintBook2 = con_strSalesData.GetIsbn();
+
+	// 一个非常量对象访问了普通的成员函数;
+	strSalesData.Average_Price();
+	// 一个常量对象访问了普通的成员函数会产生错误;
+	//con_strSalesData.Average_Price();
+	std::cout << "str_Sales_data's BookIsbn:" << PrintBook << std::endl;
+
+	//-----------str_Sales_data----------------
+
+
+	//-----------str_Sales_data----------------
 
 
 	std::system("pause");

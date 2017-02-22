@@ -99,23 +99,68 @@ void pointer1()
 	return;
 }
 
+void functry(const double *const abc)
+{
+}
+void functry2(double *const abc)
+{
+}
+
 void Printconst()
 {
 	const double pi = 3.14;
 	const double pi2 = 3.1415;
-	// ppi是一个指向常量对象的常量指针;
-	const double* const ppi = &pi;
+	double pi3 = 3.14;
+	double pi4 = 3.141;
 
-	// ppi3是一个常量指针;
-	const double* ppi3 = &pi;
+	// ppi:一个常量指针，其地址不能改变，但是对应的值可以改变;
+	double *const ppi = &pi3;
+	// ppi2\3:一个指向常量的指针，其地址可以改变，但对应的值不行;
+	const double* ppi2 = &pi;
+	double const* ppi3 = &pi;
+	// ppi4:一个指向常量对象的常量指针,其地址和对应的值都不能改变;
+	const double *const ppi4 = &pi;
+	const double *const ppi6 = &pi2;
+	const double *const ppi6 = ppi;
+	const double *const ppi5 = ppi2;
 
-	// 也就是做ppi的地址和所对应的值都不能被改变;
-	//ppi = &pi2;      ppi是指向常量的常量指针,ppi不是一个可赋值的左值;
-	//*ppi = 3.141;    ppi是指向常量的常量指针,ppi不是一个可赋值的左值;
 
-	// ppi3的地址可以改变?????;
-	ppi3 = &pi2;
+	// 常量对象的地址不可以初始化常量指针;
+	//double *const ppi = &pi;
+	// 指向常量的地址不可以初始化常量指针;
+	//double *const ppi = ppi2;
+	// 指向常量对象的常量指针不可以初始化常量指针;
+	//double *const ppi5 = ppi4;
 
-	std::cout << *ppi3 << std::endl;
+	// 常量指针可以绑定到指向常量的常量指针;
+	functry(ppi);
+
+	// ------------常量指针函数;-------------
+	// 变量地址可以绑定到常量指针;
+	functry2(&pi3);
+	// 常量地址不可以绑定到常量指针;
+	//functry2(&pi);
+	// 指向常量对象的指针不能绑定到常量指针;
+	//functry2(ppi2);
+	// 指向常量对象的常量指针也不能绑定到常量指针;
+	//functry2(ppi4);
+	// ------------常量指针函数;-------------
+
+	// ppi不能改变其地址,但是可以改变其值;
+	// ppi也不能被一个常量对象初始化;
+	//ppi = &pi;
+	//ppi = &pi3;
+	*ppi = pi4;
+
+	// ppi2\3是可以改变地址的，相对应的值也就改变了
+	std::cout << "在改变ppi2\3地址之前;" << *ppi2 << std::endl;
+	// ppi2、3的地址可以改变,但是ppi2、3所指向的值不能被改变;
+	ppi2 = &pi2;
+	//*ppi2 = pi2;
+	std::cout << "在改变ppi2\3地址之后;" << *ppi2 << std::endl;
+
+	// 也就是做ppi4的地址和所对应的值都不能被改变;
+	//ppi4 = &pi2;      ppi是指向常量的常量指针,ppi不是一个可赋值的左值;
+	//*ppi4 = 3.141;    ppi是指向常量的常量指针,ppi不是一个可赋值的左值;
 
 }
