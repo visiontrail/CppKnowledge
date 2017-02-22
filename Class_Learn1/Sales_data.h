@@ -23,7 +23,7 @@ private:
 typedef struct Tag_Str_Sales_data
 {
 	// 方法成员;
-	string GetIsbn() const   // 获取Isbn;
+	string GetIsbn()          // 获取Isbn;
 	{
 		return Book_Isbn;
 	}

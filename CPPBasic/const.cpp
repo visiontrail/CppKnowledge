@@ -98,3 +98,24 @@ void pointer1()
 
 	return;
 }
+
+void Printconst()
+{
+	const double pi = 3.14;
+	const double pi2 = 3.1415;
+	// ppi是一个指向常量对象的常量指针;
+	const double* const ppi = &pi;
+
+	// ppi3是一个常量指针;
+	const double* ppi3 = &pi;
+
+	// 也就是做ppi的地址和所对应的值都不能被改变;
+	//ppi = &pi2;      ppi是指向常量的常量指针,ppi不是一个可赋值的左值;
+	//*ppi = 3.141;    ppi是指向常量的常量指针,ppi不是一个可赋值的左值;
+
+	// ppi3的地址可以改变?????;
+	ppi3 = &pi2;
+
+	std::cout << *ppi3 << std::endl;
+
+}

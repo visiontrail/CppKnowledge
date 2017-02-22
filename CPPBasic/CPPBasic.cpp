@@ -21,6 +21,8 @@ string &refStringA(string&);
 // 给定了一个默认参数;
 int factorial(int val = 5);
 
+void Printconst();
+
 
 int main()
 {
@@ -47,6 +49,10 @@ int main()
 	//----指向指针的指针;------
 
 	//----指向指针的指针;------
+
+	//----常量指针;-------
+	Printconst();
+
 
 	std::system("pause");
 	return 0;

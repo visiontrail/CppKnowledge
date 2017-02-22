@@ -75,7 +75,6 @@ int main(int argc, char* args[])
 	// 隐含了this指针的实际调用是;
 	// Sales_data::GetIsbn(&con_strSalesData);
 
-
 	// 那么用const修饰的成员函数起到了什么作用?;
 	// const修饰符起到了修改隐式this指针的类型;
 
@@ -83,7 +82,7 @@ int main(int argc, char* args[])
 	// 一个非常量对象访问了普通的成员函数;
 	strSalesData.Average_Price();
 	// 一个常量对象访问了普通的成员函数;
-	con_strSalesData.Average_Price();
+	//con_strSalesData.Average_Price();
 	std::cout << "str_Sales_data's BookIsbn:" << PrintBook << std::endl;
 
 	//-----------str_Sales_data----------------
