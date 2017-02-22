@@ -65,11 +65,6 @@ int main(int argc, char* args[])
 
 	strSalesData.Book_Isbn = "00001";
 
-	int *a;
-
-	*a = 111;
-	double *b = &a;
-
 	// 一个非常量对象访问了const修饰的成员函数;
 	std::string PrintBook = strSalesData.GetIsbn();
 	// 隐含了this指针的实际调用是;
