@@ -22,7 +22,7 @@ void ConstDefineInitPrint()
 	int &PTr2 = i2;                          //正确，普通的引用只能引用变量;
 	int *const p2 = &i2;                     //正确，一种const指针的声明方式;
 	const int i = -1, &r2 = 0;               //正确，普通const常量和常量的引用可以使用常量;
-	const int *const p3 = &i2;               //正确，有两个const的常量指针;
+	const int *const p3 = &i2;               //正确，其是一个指向整型常量的常量指针;
 	const int *p4 = &init1;                  //错误(编译不会出错)，对于p4来说，是一个普通指针，但对于*p4来说，它是一个常量;
 	const int &r3 = i2;                      //正确，一个const引用;
 	const int i3 = i2, &r4 = i;				 //错误，常量i3使用变量初始化，编译没有问题，如果对应的变量没有被初始化，可能造成异常
@@ -99,6 +99,9 @@ void pointer1()
 	return;
 }
 
+
+
+// 有关指向常量的指针，常量指针，指向常量的常量指针的区别;
 void functry(const double *const abc)
 {
 }
@@ -121,9 +124,8 @@ void Printconst()
 	// ppi4:一个指向常量对象的常量指针,其地址和对应的值都不能改变;
 	const double *const ppi4 = &pi;
 	const double *const ppi6 = &pi2;
-	const double *const ppi6 = ppi;
-	const double *const ppi5 = ppi2;
-
+	const double *const ppi7 = ppi;
+	const double *const ppi8 = ppi2;
 
 	// 常量对象的地址不可以初始化常量指针;
 	//double *const ppi = &pi;
@@ -136,6 +138,7 @@ void Printconst()
 	functry(ppi);
 
 	// ------------常量指针函数;-------------
+	// -----常量指针比较事儿多，只有普通变量地址可以初始化;------
 	// 变量地址可以绑定到常量指针;
 	functry2(&pi3);
 	// 常量地址不可以绑定到常量指针;
@@ -144,6 +147,7 @@ void Printconst()
 	//functry2(ppi2);
 	// 指向常量对象的常量指针也不能绑定到常量指针;
 	//functry2(ppi4);
+	// -----常量指针比较事儿多，只有普通变量地址可以初始化;------
 	// ------------常量指针函数;-------------
 
 	// ppi不能改变其地址,但是可以改变其值;
