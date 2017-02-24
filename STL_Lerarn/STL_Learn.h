@@ -6,5 +6,4 @@ public:
 	strvec() = default;
 	void vectorinit();
 	std::vector<std::string> strvector;
-
 };

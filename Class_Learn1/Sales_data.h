@@ -19,7 +19,6 @@ public:
 	Sales_data(const std::string &str, const double &str2) : Book_Isbn(str), TotalIncome(str2)
 	{
 	}
-	Sales_data(std::istream &is);
 
 	// 方法成员;
 	string GetIsbn()const     // 获取Isbn;

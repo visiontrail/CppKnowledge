@@ -101,11 +101,6 @@ int main()
 	Sales_data SdInit(abc, 11.1);
 	std::cout << "利用构造函数初始化;" << SdInit.GetIsbn() << "," << SdInit.TotalIncome << std::endl;
 
-	// 构造函数B，调用了一个类外函数;
-	string abc2;
-	Sales_data SdInit2(cin>>abc2);
-	std::cout << "利用istream输入参数初始化;" << SdInit2.GetIsbn() << "," << SdInit2.TotalIncome << std::endl;
-
 	// 类外的函数;
 
 	//-----------Sales_data----------------
