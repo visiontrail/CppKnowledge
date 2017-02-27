@@ -101,7 +101,9 @@ int main()
 	Sales_data SdInit(abc, 11.1);
 	std::cout << "利用构造函数初始化;" << SdInit.GetIsbn() << "," << SdInit.TotalIncome << std::endl;
 
-	// 类外的函数;
+	// 构造函数B，调用了类外的函数;
+// 	char SdB[100];
+// 	Sales_data B(cin >> SdB);
 
 	//-----------Sales_data----------------
 

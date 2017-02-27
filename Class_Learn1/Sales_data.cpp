@@ -13,6 +13,11 @@ istream &read(istream &is, Sales_data &item)
 	return is;
 }
 
+Sales_data::Sales_data(std::istream &is)
+{
+	read(is, *this);
+}
+
 double Sales_data::Average_Price2()
 {
 	double ret = 10;

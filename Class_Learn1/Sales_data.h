@@ -15,10 +15,12 @@ public:
 	// 构造函数;
 	Sales_data() = default;
 
-	// 冒号后边是构造函数初始值列表;
-	Sales_data(const std::string &str, const double &str2) : Book_Isbn(str), TotalIncome(str2)
+	// 构造函数,冒号后边是构造函数初始值列表;
+	Sales_data(const std::string &str, const double &str2) 
+		: Book_Isbn(str), TotalIncome(str2)
 	{
 	}
+	Sales_data(std::istream &is);
 
 	// 方法成员;
 	string GetIsbn()const     // 获取Isbn;
@@ -57,13 +59,6 @@ typedef struct Tag_Str_Sales_data
 		return ret;
 	}
 
-// 	Str_Sales_data& combineTwo(const Str_Sales_data &pstr)
-// 	{
-// 		this->NumOfSale += pstr.NumOfSale;
-// 		this->TotalIncome += pstr.TotalIncome;
-// 		return *this;
-// 	}
-	
 	// 数据成员;
 	string Book_Isbn;        // 图书编号;
 	unsigned int NumOfSale;  // 销售总量;
@@ -71,5 +66,7 @@ typedef struct Tag_Str_Sales_data
 
 }Str_Sales_data, *pStr_Sales_data;
 
+
 istream &read(istream &is, Sales_data &item);
+
 #endif
