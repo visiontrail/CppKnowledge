@@ -50,6 +50,9 @@ private:
 
 class Window_Manager
 {
+	// 实现一个将screen屏幕清零的函数;
+public:
+	void Clear();
 private:
 	vector<Screen> screens{ Screen(8, 9, ' ') };
 };
