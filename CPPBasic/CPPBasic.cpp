@@ -1,63 +1,42 @@
 // CPPBasic.cpp : 定义控制台应用程序的入口点。
 //
-
 #include "stdafx.h"
-#include <iostream>
+#include "CPPBasic.h"
 #include <string>
-
-#include "Sales_data.h"
-
-using namespace std;
-
-// 函数声明;
-/* 声明const.cpp中的函数 */
-void pointer1();
-void ConstDefineInitPrint();
-void ConstDefinePrint();
-
-/* 声明auto.cpp中的函数 */
-void autoUsing_JudgeType();
-
-/* 声明function.cpp中的函数 */
-string &refStringA(string&);
-// 给定了一个默认参数;
-int factorial(int val = 5);
-
-void Printconst();
-
 
 int main()
 {
-	//----const类型相关;start------
+	//----1、const类型相关;------
 	pointer1();
 	ConstDefineInitPrint();
 	ConstDefinePrint();
-	//----const类型相关;end ------
+	//常量指针;
+	Printconst();
+	//----1、const类型相关;------
 
-	//----auto关键字;---------
+	//----2、auto关键字;---------
 	autoUsing_JudgeType();
-	//----auto关键字;---------
+	//----2、auto关键字;---------
 
-	//----返回值为引用的函数;---
+
+	// ---3、函数相关;-----------
+	//返回值为引用的函数;
 	std::string strA = "function";
 	refStringA(strA) = "FunctioN";
 	std::cout << "函数返回了引用strA;" << strA << std::endl;
-	//----返回值为引用的函数;---
 
-	//---函数的递归调用;---
+	//函数的递归调用;
 	int ret = factorial();
-	//---函数的递归调用;---
+
+	// ---3、函数相关;-----------
 	
-	//----指向指针的指针;------
+	//----4、指针;------
 
-	//----指向指针的指针;------
+	//----4、指针;------
 
-	//----常量指针;-------
-	Printconst();
-	//----常量指针;-------
 
-	//---------------类的学习;-----------------
-	//-----------str_Sales_data----------------
+	//----5、类的学习;-------------------------
+	//struct:str_Sales_data
 	Str_Sales_data strSalesData;
 	Str_Sales_data ProductA;
 	const Str_Sales_data con_strSalesData;    //con_strSalesData是一个底层const,也就是其地址非常量;
@@ -78,16 +57,18 @@ int main()
 	//con_strSalesData.Average_Price();
 	std::cout << "str_Sales_data's BookIsbn:" << PrintBook << std::endl;
 
-	//-----------Sales_data----------------
+//--------------------------------------------------------------------------------------
+
+	//class:Sales_data
 	Sales_data ProductB;
 	Sales_data total;
 	Sales_data *total2 = &total;
 
 	total.NumOfSale = 100;
-	total.TotalIncome = 100.43;
+	total.price = 100.43;
 
 	ProductB.NumOfSale = 200;
-	ProductB.TotalIncome = 99.57;
+	ProductB.price = 99.57;
 
 	total = total.CombineTwo(ProductB);
 	std::cout << "After combine is:" << total.NumOfSale << std::endl;
@@ -97,16 +78,24 @@ int main()
 	std::cout << "After combine is:" << total.NumOfSale << std::endl;
 
 	// 构造函数A,带有初始化参数列表;
-	std::string abc = "abc";
-	Sales_data SdInit(abc, 11.1);
-	std::cout << "利用构造函数初始化;" << SdInit.GetIsbn() << "," << SdInit.TotalIncome << std::endl;
+	std::string BookIsbn = "CppPrimer";
+	Sales_data SdInit(BookIsbn, 55.9);
+	std::cout << "利用构造函数初始化,图书ISBN;" << SdInit.GetIsbn() << ",图书价格;" << SdInit.price << std::endl;
 
 	// 构造函数B，调用了类外的函数;
-// 	char SdB[100];
-// 	Sales_data B(cin >> SdB);
+    // istream的实例就是cin;
+	Sales_data B(cin);
+	std::cout << "构造函数调用了Read函数，用户输入后,\nISBN;" << B.GetIsbn() << "\nPrice;" << B.price << "\nNumofSales;" << B.NumOfSale << std::endl;
+	std::cout << "图书;" << B.GetIsbn() << "的销售总额为;" << B.GetTotalIncome() << std::endl;
 
-	//-----------Sales_data----------------
 
+//----------------------------------------------------------------------------
+
+	//----5、类的学习;-------------------------
+	Screen screen1(10, 10, 'a');
+	char ret2 = screen1.get();
+	screen1.move(1, 1).set('b').move(3,3).set(10);
+	screen1.move(2, 2).voidset('1');
 
 	std::system("pause");
 	return 0;
