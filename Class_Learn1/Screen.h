@@ -1,11 +1,15 @@
 #pragma once
 #include "stdafx.h"
 #include <string>
+#include <iostream>
+#include <vector>
 
 using namespace std;
+using std::vector;
 
 class Screen
 {
+	friend Window_Manager;
 public:
 	typedef std::string::size_type pos;
 	Screen() = default;
@@ -29,16 +33,23 @@ public:
 		this->content[row + y] = c;
 		return *this;
 	}
-	void voidset(char c)
-	{
-		content[curcos] = c;
-	}
 
 	Screen& move(pos x, pos y);
+
+	// 有两个display的目的是为了针对不同的对象，有不同的display可以使用;
+	const Screen& display() const;
+	Screen& display();
 
 private:
 	pos curcos = 0;        // 光标位置;
 	pos height = 0;        // 屏幕高;
 	pos width = 0;         // 屏幕宽;
 	std::string content;   // 显示内容;
+	void do_dispaly() const;
+};
+
+class Window_Manager
+{
+private:
+	vector<Screen> screens{ Screen(8, 9, ' ') };
 };

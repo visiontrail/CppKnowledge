@@ -92,10 +92,9 @@ int main()
 //----------------------------------------------------------------------------
 
 	//----5¡¢ÀàµÄÑ§Ï°;-------------------------
-	Screen screen1(10, 10, 'a');
+	Screen screen1(8, 4, 'a');
 	char ret2 = screen1.get();
-	screen1.move(1, 1).set('b').move(3,3).set(10);
-	screen1.move(2, 2).voidset('1');
+	screen1.move(0, 0).set('b').move(1,1).set('c').display();
 
 	std::system("pause");
 	return 0;
