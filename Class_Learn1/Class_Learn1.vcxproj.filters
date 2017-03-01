@@ -30,6 +30,9 @@
     <ClInclude Include="Screen.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Window_Mgr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -39,6 +42,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Screen.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Window_Mgr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

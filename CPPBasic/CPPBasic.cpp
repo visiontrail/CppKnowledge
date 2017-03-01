@@ -88,6 +88,8 @@ int main()
 	std::cout << "构造函数调用了Read函数，用户输入后,\nISBN;" << B.GetIsbn() << "\nPrice;" << B.price << "\nNumofSales;" << B.NumOfSale << std::endl;
 	std::cout << "图书;" << B.GetIsbn() << "的销售总额为;" << B.GetTotalIncome() << std::endl;
 
+	std::string nullbook = "99-99-99-99";
+	SdInit.CombineTwo(nullbook);
 
 //----------------------------------------------------------------------------
 

@@ -1,4 +1,7 @@
 #pragma once
+#ifndef SCREEN_H
+#define SCREEN_H
+
 #include "stdafx.h"
 #include <string>
 #include <iostream>
@@ -6,6 +9,8 @@
 
 using namespace std;
 using std::vector;
+
+extern class Window_Manager;
 
 class Screen
 {
@@ -15,7 +20,7 @@ public:
 	Screen() = default;
 	Screen(pos width, pos height, char c)
 		: width(width), height(height), content(width * height, c) {}
-	
+
 	char get() const
 	{
 		return content[curcos];
@@ -48,11 +53,4 @@ private:
 	void do_dispaly() const;
 };
 
-class Window_Manager
-{
-	// 实现一个将screen屏幕清零的函数;
-public:
-	void Clear();
-private:
-	vector<Screen> screens{ Screen(8, 9, ' ') };
-};
+#endif // !SCREEN_H

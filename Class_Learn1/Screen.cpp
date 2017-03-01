@@ -30,8 +30,7 @@ void Screen::do_dispaly() const
 {
 	std::cout << "Screen is: " << std::endl;
 	std::cout << "      ";
-	for (int PrintCol = 0; PrintCol < this->width
-		; ++PrintCol)
+	for (int PrintCol = 0; PrintCol < this->width; ++PrintCol)
 	{
 		std::cout << " " << PrintCol;
 	}

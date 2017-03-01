@@ -26,6 +26,10 @@ public:
 	// 构造函数，也可以直接调用类之外的函数;
 	Sales_data(std::istream &is);
 
+	// 委托构造函数，也就是利用了其他的构造函数来初始化自己的参数列表;
+	Sales_data(string BookIsbn)
+		: Sales_data(BookIsbn, 33) {}
+
 	// 方法成员;
 	string GetIsbn()const     // 获取Isbn;
 	{
