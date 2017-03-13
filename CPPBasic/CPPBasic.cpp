@@ -36,6 +36,7 @@ int main()
 
 
 	//----5、类的学习;-------------------------
+	
 	//struct:str_Sales_data
 	Str_Sales_data strSalesData;
 	Str_Sales_data ProductA;
@@ -91,12 +92,25 @@ int main()
 	std::string nullbook = "99-99-99-99";
 	SdInit.CombineTwo(nullbook);
 
-//----------------------------------------------------------------------------
+	SdInit.CombineTwo(Sales_data(nullbook));
 
-	//----5、类的学习;-------------------------
+	read(cin,ProductB);
+
+//----------------------------------------------------------------------------
+	
+	//Screen
 	Screen screen1(8, 4, 'a');
 	char ret2 = screen1.get();
 	screen1.move(0, 0).set('b').move(1,1).set('c').display();
+
+//----------------------------------------------------------------------------
+	
+	//Bank_Ancout
+	Bank_Acount::SetRate(0.03);
+	double rate = Bank_Acount::GetRate();
+	std::cout << "Rate is:" << rate << std::endl;
+
+	//----5、类的学习;-------------------------
 
 	std::system("pause");
 	return 0;

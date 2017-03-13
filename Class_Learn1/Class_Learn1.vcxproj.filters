@@ -33,6 +33,9 @@
     <ClInclude Include="Window_Mgr.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Bank_Acount.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -45,6 +48,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Window_Mgr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Bank_Acount.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

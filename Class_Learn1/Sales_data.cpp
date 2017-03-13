@@ -9,6 +9,7 @@ void printSalesData(const Sales_data& Obj)
 istream &read(istream &is, Sales_data &item)
 {
 	double price = 0;
+	std::cout << "Please Type in Information";
 	is >> item.Book_Isbn >> item.NumOfSale >> item.price >> item.TotalIncome;
 	return is;
 }

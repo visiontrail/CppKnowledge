@@ -120,7 +120,7 @@ void Printconst()
 	double *const ppi = &pi3;
 	// ppi2\3:一个指向常量的指针，其地址可以改变，但对应的值不行;
 	const double* ppi2 = &pi;
-	double const* ppi3 = &pi;
+	double const* ppi3 = &pi3;
 	// ppi4:一个指向常量对象的常量指针,其地址和对应的值都不能改变;
 	const double *const ppi4 = &pi;
 	const double *const ppi6 = &pi2;
