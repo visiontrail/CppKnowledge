@@ -106,9 +106,15 @@ int main()
 //----------------------------------------------------------------------------
 	
 	//Bank_Ancout
-	Bank_Acount::SetRate(0.03);
+	Bank_Acount GL_BK_Acount;
+	GL_BK_Acount.GetRate();
+	Bank_Acount::SetRate(0.07);
 	double rate = Bank_Acount::GetRate();
 	std::cout << "Rate is:" << rate << std::endl;
+
+	Bank_Acount::newrate = 0.06;
+
+	std::cout << "New rate is:" << Bank_Acount::newrate << std::endl;
 
 	//----5¡¢ÀàµÄÑ§Ï°;-------------------------
 

@@ -2,6 +2,7 @@
 #include "Bank_Acount.h"
 
 double Bank_Acount::interestRate = initRate();
+double Bank_Acount::newrate = 0.04;
 
 double Bank_Acount::GetRate()
 {
