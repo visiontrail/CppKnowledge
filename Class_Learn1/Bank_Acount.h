@@ -7,7 +7,7 @@
 
 using namespace std;
 
-// 2
+// 1
 
 class Bank_Acount
 {
