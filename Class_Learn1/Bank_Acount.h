@@ -17,9 +17,8 @@ public:
 	~Bank_Acount();
 
 	static double GetRate();
-	static double newrate;
-	static void SetRate(double);
 
+	static void SetRate(double);
 	double GetAmount();
 
 private:
