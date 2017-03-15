@@ -7,12 +7,8 @@
 
 using namespace std;
 
-<<<<<<< HEAD
 // b4
 // c1
-=======
-// b2
->>>>>>> parent of 085a045... b3
 
 class Bank_Acount
 {
