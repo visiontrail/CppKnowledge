@@ -33,6 +33,12 @@
     <ClInclude Include="String_l.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="GenericAlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Lambda.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -45,6 +51,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="string.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericAlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lambda.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -148,6 +148,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GenericAlg.h" />
+    <ClInclude Include="Lambda.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="STL_Learn.h" />
     <ClInclude Include="String_l.h" />
@@ -155,6 +157,8 @@
     <ClInclude Include="Vector_etc.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GenericAlg.cpp" />
+    <ClCompile Include="lambda.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

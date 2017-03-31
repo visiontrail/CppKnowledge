@@ -5,6 +5,7 @@
 
 #include "STL_Learn.h"
 #include "Vector_etc.h"
+#include "Sales_data.h"
 
 using namespace std;
 
@@ -51,5 +52,26 @@ void strvec::vectorinit()
 		strvector.push_back(tempstr);
 	}
 
+	vecSalesData.emplace_back("Abcd");
+	vecSalesData.emplace_back();
+
+	for (auto c : vecSalesData)
+	{
+		std::cout << c.Book_Isbn << std::endl;
+	}
+
+	for (int temp = 100; temp >= 0; temp--)
+	{
+		vecint.push_back(temp);
+	}
 }
 
+
+bool SortFater50(const int &para1, const int &para2)
+{
+	if (para1 > 50 || para2 > 50)
+	{
+		return para1 > para2;
+	}
+	return para1 < para2;
+}
