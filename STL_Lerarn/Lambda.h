@@ -15,7 +15,7 @@ public:
 		for (auto itr = _addresses.begin(), end = _addresses.end(); itr != end; ++itr)
 		{
 			// call the function passed into findMatchingAddresses and see if it matches  
-			int aaa = itr->find("www.baidu.org");
+			//int aaa = itr->find("www.baidu.org");
 			if (func(*itr))
 			{
 				results.push_back(*itr);

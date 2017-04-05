@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <fstream>
 #include <numeric>
+#include <functional>
 
 #include "STL_Learn.h"
 #include "Vector_etc.h"
@@ -28,6 +29,16 @@ auto PrintLambdaFunc = [](int a)
 {
 	std::cout << "print" << std::endl;
 };
+
+bool FindAssignSizeString(const string &str, const int &size)
+{
+	return str.size() > size;
+}
+
+bool FindSizeOver5String(const string &str)
+{
+	return str.size() > 5;
+}
 
 
 //---------Lambda表达式;------------
@@ -81,12 +92,30 @@ int main(int argc, char* args[])
 		}
 	}
 
+	// 二元谓词的使用方法;
 	sort(vec1.vecint.begin(), vec1.vecint.end(), SortFater50);
 
 	for (auto itor : vec1.vecint)
 	{
 
-		std::cout << "After sort:" << itor << std::endl;
+		std::cout << "(Two Predicate)After sort:" << itor << std::endl;
+
+	}
+
+	// lambda表达式的使用方法;
+	stable_sort(vec1.vecint.begin(), vec1.vecint.end(), [](const int& a, const int& b) 
+	{
+		if (a > 50 || b > 50)
+		{
+			return a > b;
+		}
+		return a < b;
+	});
+
+	for (auto itor : vec1.vecint)
+	{
+
+		std::cout << "(Lambda)After sort:" << itor << std::endl;
 
 	}
 
@@ -161,10 +190,31 @@ int main(int argc, char* args[])
 		[](const string& str) { return str.find(".org") != std::string::npos; }
 	);
 
-	for (auto printtemp : res5)
+	int sz = 5;
+	std::vector<std::string> res6 = global_address_book.findMatchingAddresses
+	(
+		[sz](const string& str) { return (str.find(".org") != std::string::npos) && (str.size() > sz); }
+	);
+
+	for (auto printtemp : res6)
 	{
 		std::cout << "Lambda after:" << printtemp << std::endl;
 	}
+
+	std::vector<string> words;
+	words.push_back("www.baidu.com");
+	words.push_back("www.baidu.org");
+	words.push_back(".org");
+	words.push_back("www.ling3d.org");
+	words.push_back("www");
+
+	auto wc2 = find_if(words.begin(), words.end(), FindSizeOver5String);
+	std::cout << "使用一元谓词的时候;" << *wc2 << std::endl;
+
+	auto wc = find_if(words.begin(), words.end(), [sz](const string &a) {return a.size() <= sz; });
+	std::cout << "使用Lambda表达式的时候;" << *wc << std::endl;
+
+// 	auto checkoverSZstring = bind(FindAssignSizeString, _1, sz);
 
 	//--------------lambda---------------------
 
