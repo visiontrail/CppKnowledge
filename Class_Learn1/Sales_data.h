@@ -30,6 +30,11 @@ public:
 	Sales_data(string BookIsbn)
 		: Sales_data(BookIsbn, 33) {}
 
+	// 拷贝构造函数;
+	Sales_data(const Sales_data&);
+
+	~Sales_data();
+
 	// 方法成员;
 	string GetIsbn()const     // 获取Isbn;
 	{
@@ -40,6 +45,8 @@ public:
 
 	Sales_data& CombineTwo(const Sales_data &res);
 	Sales_data* CombineTwo2(Sales_data *const res);
+
+	Sales_data& operator=(const Sales_data&);
 
 	// 数据成员;
 	double price;             // 售价;

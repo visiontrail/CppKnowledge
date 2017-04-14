@@ -90,11 +90,20 @@ int main()
 	std::cout << "图书;" << B.GetIsbn() << "的销售总额为;" << B.GetTotalIncome() << std::endl;
 
 	std::string nullbook = "99-99-99-99";
+
+	// 其作为函数入参，复制了两次，所以会调用析构函数;
 	SdInit.CombineTwo(nullbook);
-
 	SdInit.CombineTwo(Sales_data(nullbook));
+	
+	{
+		Sales_data copySD;
+		read(cin, ProductB);
+		copySD = ProductB;
 
-	read(cin,ProductB);
+		std::cout << "Copy by operator = ,copySD BookIsbn is" << copySD.Book_Isbn << std::endl;
+	}
+
+
 
 //----------------------------------------------------------------------------
 	
