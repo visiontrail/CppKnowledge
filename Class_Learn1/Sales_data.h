@@ -1,6 +1,6 @@
 #pragma once
 #ifndef SALES_DATA_H
-#define  SALES_DATA_H
+#define SALES_DATA_H
 
 #include "stdafx.h"
 #include <string>
@@ -31,7 +31,7 @@ public:
 		: Sales_data(BookIsbn, 33) {}
 
 	// ¿½±´¹¹Ôìº¯Êý;
-	Sales_data(const Sales_data&);
+	Sales_data(const Sales_data&) = delete;
 
 	~Sales_data();
 
