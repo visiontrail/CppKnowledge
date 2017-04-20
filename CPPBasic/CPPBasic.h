@@ -7,6 +7,7 @@
 #include "Sales_data.h"
 #include "Screen.h"
 #include "Bank_Acount.h"
+#include "StrVec.h"
 
 using namespace std;
 

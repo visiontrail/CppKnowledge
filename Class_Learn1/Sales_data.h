@@ -31,7 +31,7 @@ public:
 		: Sales_data(BookIsbn, 33) {}
 
 	// ¿½±´¹¹Ôìº¯Êý;
-	Sales_data(const Sales_data&) = delete;
+	Sales_data(const Sales_data&);
 
 	~Sales_data();
 

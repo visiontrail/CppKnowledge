@@ -35,7 +35,7 @@ int main()
 	//----4、指针;------
 
 
-	//----5、类的学习;-------------------------
+	//----5、类的学习;start-------------------------
 	
 	//struct:str_Sales_data
 	Str_Sales_data strSalesData;
@@ -58,9 +58,9 @@ int main()
 	//con_strSalesData.Average_Price();
 	std::cout << "str_Sales_data's BookIsbn:" << PrintBook << std::endl;
 
-//--------------------------------------------------------------------------------------
 
-	//class:Sales_data
+//                                                                           Sales_data
+//--------------------------------------------------------------------------------------
 	Sales_data ProductB;
 	Sales_data total;
 	Sales_data *total2 = &total;
@@ -103,23 +103,44 @@ int main()
 		std::cout << "Copy by operator = ,copySD BookIsbn is" << copySD.Book_Isbn << std::endl;
 	}
 
+//----------------------------------------------------------------------------
 
 
+
+//                                                                      Screen
 //----------------------------------------------------------------------------
 	
-	//Screen
 	Screen screen1(8, 4, 'a');
 	char ret2 = screen1.get();
 	screen1.move(0, 0).set('b').move(1,1).set('c').display();
 
 //----------------------------------------------------------------------------
-	
-	//Bank_Ancout
+
+
+
+//                                                                 Bank_Ancout
+//----------------------------------------------------------------------------
+
 	Bank_Acount::SetRate(0.03);
 	double rate = Bank_Acount::GetRate();
 	std::cout << "Rate is:" << rate << std::endl;
 
-	//----5、类的学习;-------------------------
+//----------------------------------------------------------------------------
+
+
+
+
+//                                                                      StrVec
+//----------------------------------------------------------------------------
+	StrVec StringVec;
+	string elem = "1";
+	StringVec.push_back(elem);
+
+	StringVec.push_back(elem);
+//----------------------------------------------------------------------------
+
+
+	//----5、类的学习;end-------------------------
 
 	std::system("pause");
 	return 0;
