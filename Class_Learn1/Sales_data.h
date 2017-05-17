@@ -90,4 +90,11 @@ public:
 
 istream &read(istream &is, Sales_data &item);
 
+
+class dictionary : public Sales_data
+{
+public:
+	double GetTotalIncome();
+};
+
 #endif

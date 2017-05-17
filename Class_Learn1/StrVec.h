@@ -28,11 +28,11 @@ public:
 	{
 		return cap - first_elem;
 	}
-	string* begin()
+	string* begin() const
 	{
 		return first_elem;
 	}
-	string* end()
+	string* end() const
 	{
 		return first_free;
 	}
@@ -51,7 +51,7 @@ private:
 	string *first_elem;                     // 指向第一个元素;
 	string *first_free;                     // 指向最后一个元素之后;
 	string *cap;                            // 指向所分配内存之后;
-	std::allocator<string> alloc;    // 所分配的内存;
+	static std::allocator<string> alloc;           // 所分配的内存;
 };
 
 #endif

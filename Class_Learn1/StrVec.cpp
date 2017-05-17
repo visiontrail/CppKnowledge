@@ -2,8 +2,11 @@
 #include "StrVec.h"
 #include <memory>
 
-StrVec::StrVec(const StrVec &)
+StrVec::StrVec(const StrVec &s)
 {
+	auto new_Data = alloc_n_copy(s.begin(), s.end());
+	first_elem = new_Data.first;
+	first_free = cap = new_Data.second;
 }
 
 StrVec & StrVec::operator=(const StrVec &strvec)
@@ -20,11 +23,6 @@ void StrVec::push_back(const string& str)
 {
 	chk_n_alloc();
 	alloc.construct(first_free++, str);
-}
-
-std::pair<string*, string*> StrVec::alloc_n_copy(const string *, const string *)
-{
-	return std::pair<string*, string*>();
 }
 
 void StrVec::reallocator()

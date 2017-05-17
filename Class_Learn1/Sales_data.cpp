@@ -58,3 +58,9 @@ Sales_data::~Sales_data()
 {
 	std::cout << this->Book_Isbn << "Sales_dataÎö¹¹º¯Êý;" << std::endl;
 }
+
+double dictionary::GetTotalIncome()
+{
+	std::cout << "This is class dictionary override function" << std::endl;
+	return 1;
+}
