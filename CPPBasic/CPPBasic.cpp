@@ -33,9 +33,13 @@ int main()
 	int ret = factorial();
 	//--------------------------------------------------------------------------------------
 	
-	//----4、指针;------
 
-	//----4、指针;------
+
+	//                                                                             4、指针;
+	//--------------------------------------------------------------------------------------
+
+
+	//--------------------------------------------------------------------------------------
 
 
 	//                                                                          5、类的基础;
@@ -44,7 +48,7 @@ int main()
 	//struct:str_Sales_data
 	Str_Sales_data strSalesData;
 	Str_Sales_data ProductA;
-	const Str_Sales_data con_strSalesData;    //con_strSalesData是一个底层const,也就是其地址非常量;
+	const Str_Sales_data con_strSalesData;  //con_strSalesData是一个底层const,也就是其地址非常量;
 
 	strSalesData.Book_Isbn = "00001";
 	strSalesData.NumOfSale = 100;
@@ -66,7 +70,7 @@ int main()
 
 
 
-	//                                                                           Sales_data
+	//                                                                          类Sales_data
 	//--------------------------------------------------------------------------------------
 	Sales_data ProductB;
 	Sales_data ProductB2;
@@ -100,12 +104,15 @@ int main()
 	// 构造函数A,带有初始化参数列表;
 	std::string BookIsbn = "CppPrimer";
 	Sales_data SdInit(BookIsbn, 55.9);
-	std::cout << "利用构造函数初始化,图书ISBN;" << SdInit.GetIsbn() << ",图书价格;" << SdInit.price << std::endl;
+	std::cout << "利用构造函数初始化,图书ISBN;" << SdInit.GetIsbn() 
+			  << ",图书价格;" << SdInit.price << std::endl;
 
 	// 构造函数B，调用了类外的函数;
     // istream的实例就是cin;
 	Sales_data B(cin);
-	std::cout << "构造函数调用了Read函数，用户输入后,\nISBN;" << B.GetIsbn() << "\nPrice;" << B.price << "\nNumofSales;" << B.NumOfSale << std::endl;
+	std::cout << "构造函数调用了Read函数，用户输入后,\nISBN;" << B.GetIsbn() 
+		      << "\nPrice;" << B.price << "\nNumofSales;" << B.NumOfSale << std::endl;
+
 	std::cout << "图书;" << B.GetIsbn() << "的销售总额为;" << B.GetTotalIncome() << std::endl;
 
 	std::string nullbook = "99-99-99-99";
@@ -129,7 +136,7 @@ int main()
 
 
 
-	//                                                                      Screen
+	//                                                                    类Screen
 	//----------------------------------------------------------------------------
 	
 	Screen screen1(8, 4, 'a');
@@ -140,7 +147,7 @@ int main()
 
 
 
-	//                                                                 Bank_Ancout
+	//                                                               类Bank_Ancout
 	//----------------------------------------------------------------------------
 
 	Bank_Acount::SetRate(0.03);
@@ -152,13 +159,15 @@ int main()
 
 
 
-	//                                                                      StrVec
+	//                                                                   类StrVec
 	//----------------------------------------------------------------------------
 
+
+	//                                                                    6、递归
 	//----------------------------------------------------------------------------
-
-
-	//----5、类的学习;end-------------------------
+	int JiechengRet;
+	JiechengRet = Jiecheng(10);
+	//----------------------------------------------------------------------------
 
 	std::system("pause");
 	return 0;

@@ -26,3 +26,5 @@ string &refStringA(string&);
 int factorial(int val = 5);
 
 void Printconst();
+
+int Jiecheng(int);

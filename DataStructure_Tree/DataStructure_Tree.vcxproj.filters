@@ -24,7 +24,10 @@
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="CPPBasic.h">
+    <ClInclude Include="Binary_Tree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,22 +35,13 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="const.cpp">
+    <ClCompile Include="DataStructure_Tree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="auto.cpp">
+    <ClCompile Include="Binary_Tree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="array.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Recursion.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CppBasic.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Function.cpp">
+    <ClCompile Include="Tree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
