@@ -47,6 +47,13 @@ public:
 	Sales_data* CombineTwo2(Sales_data *const res);
 
 	Sales_data& operator=(const Sales_data&);
+	friend const Sales_data operator+(const Sales_data& rhs, const Sales_data& lhs)
+	{
+		Sales_data obj;
+		obj.NumOfSale = rhs.NumOfSale + lhs.NumOfSale;
+		obj.Book_Isbn = rhs.Book_Isbn + "And" + lhs.Book_Isbn;
+		return obj;
+	}
 
 	// 数据成员;
 	double price;             // 售价;
@@ -56,7 +63,6 @@ protected:
 private:
 	double TotalIncome;       // 销售总额;
 };
-
 
 /*
 对于C++标准来说，struct也是可以定义类的，所以其可以包含成员函数;

@@ -69,8 +69,10 @@ int main()
 	//                                                                           Sales_data
 	//--------------------------------------------------------------------------------------
 	Sales_data ProductB;
+	Sales_data ProductB2;
 	Sales_data total;
 	Sales_data *total2 = &total;
+	Sales_data total3;
 	dictionary dic1;
 
 	total.NumOfSale = 100;
@@ -78,6 +80,15 @@ int main()
 
 	ProductB.NumOfSale = 200;
 	ProductB.price = 99.57;
+	ProductB.Book_Isbn = "ProductB1";
+
+	ProductB2.NumOfSale = 900;
+	ProductB2.price = 99.57;
+	ProductB2.Book_Isbn = "ProductB2";
+
+	total3 = (ProductB + ProductB2);
+	std::cout << "After + and = is:" << total3.Book_Isbn << std::endl;
+	std::cout << "After + and = is:" << total3.NumOfSale << std::endl;
 
 	total = total.CombineTwo(ProductB);
 	std::cout << "After combine is:" << total.NumOfSale << std::endl;
