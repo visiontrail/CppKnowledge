@@ -18,5 +18,13 @@ public:
 	Multi_Tree *m_Parent;
 	std::vector<Multi_Tree*> m_Children;
 
-	static void RecursionTree(Multi_Tree*);
+	static std::vector<int> RecursionTree(Multi_Tree*);
+};
+
+class Tree_Container
+{
+public:
+	static std::vector<int> Tree;
+protected:
+private:
 };

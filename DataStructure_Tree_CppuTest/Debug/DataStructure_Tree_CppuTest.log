@@ -1,0 +1,41 @@
+﻿  Try_Test.cpp
+  DataStructure_Tree_CppuTest.cpp
+  正在生成代码...
+CppUTest.lib(CommandLineTestRunner.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(CommandLineTestRunner.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(MemoryLeakWarningPlugin.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(MemoryLeakWarningPlugin.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(Utest.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(Utest.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(SimpleString.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(SimpleString.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TestResult.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TestResult.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TestPlugin.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TestPlugin.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TestOutput.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TestOutput.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(CommandLineArguments.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(CommandLineArguments.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(JUnitTestOutput.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(JUnitTestOutput.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TeamCityTestOutput.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TeamCityTestOutput.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TestRegistry.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TestRegistry.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TestFailure.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TestFailure.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(MemoryLeakDetector.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(MemoryLeakDetector.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TestMemoryAllocator.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TestMemoryAllocator.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(SimpleMutex.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(SimpleMutex.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(UtestPlatform.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(UtestPlatform.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TestFilter.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DataStructure_Tree_CppuTest.obj 中)
+CppUTest.lib(TestFilter.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(DataStructure_Tree_CppuTest.obj 中)
+LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+Try_Test.obj : error LNK2019: 无法解析的外部符号 "public: static void __cdecl Multi_Tree::RecursionTree(class Multi_Tree *)" (?RecursionTree@Multi_Tree@@SAXPAV1@@Z)，该符号在函数 "public: virtual void __thiscall TEST_FirstTestGroup_FirstTest_Test::testBody(void)" (?testBody@TEST_FirstTestGroup_FirstTest_Test@@UAEXXZ) 中被引用
+CppUTest.lib(UtestPlatform.obj) : error LNK2019: 无法解析的外部符号 __imp__timeGetTime@0，该符号在函数 "long __cdecl VisualCppTimeInMillis(void)" (?VisualCppTimeInMillis@@YAJXZ) 中被引用
+D:\Workspace\learn\CPP基础和标准库\Debug\DataStructure_Tree_CppuTest.exe : fatal error LNK1120: 2 个无法解析的外部命令
