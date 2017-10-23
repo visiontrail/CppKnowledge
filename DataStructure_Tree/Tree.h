@@ -18,7 +18,8 @@ public:
 	Multi_Tree *m_Parent;
 	std::vector<Multi_Tree*> m_Children;
 
-	static std::vector<int> RecursionTree(Multi_Tree*);
+	// Ç°Ðò±éÀú;
+	static std::vector<int> RecursionTree_Front(Multi_Tree*);
 };
 
 class Tree_Container

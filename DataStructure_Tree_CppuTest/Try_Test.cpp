@@ -23,6 +23,8 @@ TEST_GROUP(FooTestGroup)
 TEST(FirstTestGroup, FirstTest)
 {
 	std::vector<Multi_Tree> TreeList1;
+	std::vector<int> Ret;
+
 	Multi_Tree a(1, nullptr);
 	Multi_Tree b(2, &a);
 	Multi_Tree c(3, &a);
@@ -36,5 +38,14 @@ TEST(FirstTestGroup, FirstTest)
 	std::vector<Multi_Tree*> b_Children = { &f, &g, &h };
 	b.m_Children = b_Children;
 
-	Multi_Tree::RecursionTree(&a);
+	Ret = Multi_Tree::RecursionTree_Front(&a);
+
+	std::vector<int> CheckRight = { 1,2,6,7,8,3,4,5 };
+	int i = 0;
+	for (auto check : Ret)
+	{
+		CHECK(check == CheckRight[i]);
+		i++;
+	}
+
 }

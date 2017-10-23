@@ -3,7 +3,9 @@
 
 std::vector<int> g_Ret;
 
-std::vector<int> Multi_Tree::RecursionTree(Multi_Tree *tree)
+//                                   通过前序遍历遍历一棵树;
+// ---------------------------------------------------------
+std::vector<int> Multi_Tree::RecursionTree_Front(Multi_Tree *tree)
 {
 	if (tree != nullptr)
 	{
@@ -13,7 +15,7 @@ std::vector<int> Multi_Tree::RecursionTree(Multi_Tree *tree)
 		{
 			for (auto children : tree->m_Children)
 			{
-				RecursionTree(children);
+				RecursionTree_Front(children);
 			}
 		}
 	}

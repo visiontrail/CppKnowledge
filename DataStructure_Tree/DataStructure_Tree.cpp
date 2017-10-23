@@ -26,7 +26,7 @@ int main()
 	std::vector<Multi_Tree*> b_Children = { &f, &g, &h };
 	b.m_Children = b_Children;
 
-	Multi_Tree::RecursionTree(&a);
+	Multi_Tree::RecursionTree_Front(&a);
 
 	std::system("pause");
     return 0;
