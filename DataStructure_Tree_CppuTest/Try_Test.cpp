@@ -1,13 +1,14 @@
 #include "stdafx.h"
 #include "CppUTest/TestHarness.h"
 #include "../DataStructure_Tree/Tree.h"
+#include "CppUTestExt/MockSupport.h"
 #include <vector>
 
 TEST_GROUP(FirstTestGroup)
 {
 };
 
-TEST_GROUP(FooTestGroup)
+TEST_GROUP(TreeTestGroup)
 {
 	void setup()
 	{
@@ -20,7 +21,14 @@ TEST_GROUP(FooTestGroup)
 	}
 };
 
-TEST(FirstTestGroup, FirstTest)
+void productionCode()
+{
+	mock().actualCall("productionCode");
+}
+
+//                                          有根节点，一颗完整的树;
+//----------------------------------------------------------------
+TEST(TreeTestGroup, TreeFrontRecoursion_Test1)
 {
 	std::vector<Multi_Tree> TreeList1;
 	std::vector<int> Ret;
@@ -41,11 +49,5 @@ TEST(FirstTestGroup, FirstTest)
 	Ret = Multi_Tree::RecursionTree_Front(&a);
 
 	std::vector<int> CheckRight = { 1,2,6,7,8,3,4,5 };
-	int i = 0;
-	for (auto check : Ret)
-	{
-		CHECK(check == CheckRight[i]);
-		i++;
-	}
-
+	CHECK_TEXT(Ret == CheckRight, "Recoursion Tree (Front)");
 }
