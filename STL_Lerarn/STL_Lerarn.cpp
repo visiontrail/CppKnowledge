@@ -216,6 +216,13 @@ int main(int argc, char* args[])
 
 // 	auto checkoverSZstring = bind(FindAssignSizeString, _1, sz);
 
+	struct MyStruct
+	{
+		int a;
+		double b;
+	};
+
+	cout << "Sizeof MyStruct:" << sizeof(MyStruct) << std::endl;
 	//--------------lambda---------------------
 
 	system("pause");
