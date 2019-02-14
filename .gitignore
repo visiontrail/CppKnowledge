@@ -28,9 +28,10 @@
 
 /cmake-build-debug
 
+# ignore build result directory
 **/.vscode
 **/build
-*.log
+
 
 # ignore the GUN automake files
 compile
@@ -45,6 +46,17 @@ stamp-h1
 Makefile.in
 **/autom4te.cache
 **/.deps
+*.log
+Makefile
+*.m4
+*.lo
+*.guess
+*.sub
+ltmain.sh
+libtool
+*.la
+configure
+
 
 # ignore cmake files
 **/cmake-build-debug
