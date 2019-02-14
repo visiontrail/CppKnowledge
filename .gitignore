@@ -27,3 +27,18 @@
 /STL_Lerarn.opensdf
 
 /cmake-build-debug
+
+**/.vscode
+**/autom4te.cache
+*.log
+
+compile
+config.h.in
+config.status
+depcomp
+*.o
+INSTALL
+install-sh
+missing
+stamp-h1
+
