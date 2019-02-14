@@ -29,11 +29,10 @@
 /cmake-build-debug
 
 **/.vscode
-**/autom4te.cache
 **/build
 *.log
 
-# ignore the GUN automake file
+# ignore the GUN automake files
 compile
 config.h.in
 config.status
@@ -44,5 +43,15 @@ install-sh
 missing
 stamp-h1
 Makefile.in
+**/autom4te.cache
+**/.deps
+
+# ignore cmake files
+**/cmake-build-debug
+
+# ignore visual studio generate files
+**/Debug
+**/Release
+**/x64
 
 
