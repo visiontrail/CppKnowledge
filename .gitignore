@@ -30,8 +30,10 @@
 
 **/.vscode
 **/autom4te.cache
+**/build
 *.log
 
+# ignore the GUN automake file
 compile
 config.h.in
 config.status
@@ -41,4 +43,6 @@ INSTALL
 install-sh
 missing
 stamp-h1
+Makefile.in
+
 
