@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/make1.dir/src/main.c.o  -o make1 -Wl,-rpath,/home/guoliang/Desktop/WorkSpace/Learn/GNU_Make/AutoMake03/lib ../lib/libcalc.so 

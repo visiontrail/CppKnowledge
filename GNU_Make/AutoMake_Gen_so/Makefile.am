@@ -1,0 +1,4 @@
+AUTOMAKE_OPTIONS=foreign
+lib_LTLIBRARIES=libcalc.la
+libcalc_la_SOURCES=calc.c
+include_HEADERS=calc.h

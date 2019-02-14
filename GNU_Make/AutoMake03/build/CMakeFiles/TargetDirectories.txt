@@ -1,0 +1,3 @@
+/home/guoliang/Desktop/WorkSpace/Learn/GNU_Make/AutoMake03/build/CMakeFiles/rebuild_cache.dir
+/home/guoliang/Desktop/WorkSpace/Learn/GNU_Make/AutoMake03/build/CMakeFiles/make1.dir
+/home/guoliang/Desktop/WorkSpace/Learn/GNU_Make/AutoMake03/build/CMakeFiles/edit_cache.dir
