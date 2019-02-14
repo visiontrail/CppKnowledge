@@ -19,4 +19,4 @@ message(${INCLUDE_PATHS2})
 
 add_executable(CmakeLearn3 ${APP_SRC})
 target_link_libraries(CmakeLearn3 libhello)
-target_link_libraries(CmakeLearn3 libcalc)
+target_link_libraries(CmakeLearn3 calc)
