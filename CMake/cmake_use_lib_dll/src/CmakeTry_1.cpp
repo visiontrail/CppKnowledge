@@ -5,6 +5,8 @@
 #include <iostream>
 #include "hello.h"
 #include "calc.h"
+#include "calc2.h"
+
 using namespace std;
 
 int main()
@@ -13,6 +15,7 @@ int main()
 	func(&temp);
 	cout << temp << endl;
 	cout << "The Max Number is" << Get_Max(10, 20) << endl;
+	cout << "The Min Number is" << Get_Min(10, 20) << endl;
 	printhello();
 	return 0;
 }
