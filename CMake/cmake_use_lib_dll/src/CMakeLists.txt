@@ -33,8 +33,9 @@ target_link_libraries(ProjUseLibDLL calc
 
 # 为项目指定动态库
 if(CMAKE_SYSTEM_NAME STREQUAL Windows)
-    message("windows build:")
+    message("Windows build")
 elseif(CMAKE_SYSTEM_NAME STREQUAL Linux)
-    message("Linux build:")
-	target_link_libraries(ProjUseLibDLL E:/WorkSpace/Learn/Cpp/Cpp_Knowledge/CMake/cmake_use_lib_dll/lib/calc2.so)
+    message("Linux build")
+    target_link_libraries(ProjUseLibDLL 
+    ${PROJECT_SOURCE_DIR}/lib/libcalc2.so)
 endif ()
