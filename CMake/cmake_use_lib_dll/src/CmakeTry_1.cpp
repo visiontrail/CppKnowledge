@@ -14,8 +14,8 @@ int main()
 	int temp;
 	func(&temp);
 	cout << temp << endl;
-	cout << "The Max Number is" << Get_Max(10, 20) << endl;
-	cout << "The Min Number is" << Get_Min(10, 20) << endl;
+	cout << "The Max Number is " << Get_Max(10, 20) << endl;
+	cout << "The Min Number is " << Get_Min(10, 20) << endl;
 	printhello();
 	return 0;
 }
@@ -23,4 +23,9 @@ int main()
 void func(int *a)
 {
 	*a = PRINTDEFINE;
+}
+
+void func2(int *a)
+{
+	*a = 100;
 }
