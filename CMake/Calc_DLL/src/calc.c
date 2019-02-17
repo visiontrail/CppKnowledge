@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 
 int Get_Min(int a, int b)
 {
@@ -10,4 +11,9 @@ int Get_Min(int a, int b)
     {
         return b;
     }
+}
+
+int main(int argc, char **argv)
+{
+    printf("this is calc \n");
 }
