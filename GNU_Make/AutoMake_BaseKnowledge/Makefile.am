@@ -1,2 +1,3 @@
+# bin表示要安装的目录，PROGRAMS表示是一个可执行文件，helloworld表示目标文件
 bin_PROGRAMS=helloworld
 helloworld_SOURCES=helloworld.c
