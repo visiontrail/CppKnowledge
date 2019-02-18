@@ -6,6 +6,7 @@
 #include "hello.h"
 #include "calc.h"
 #include "calc2.h"
+#include "stringHelper.h"
 
 using namespace std;
 
@@ -17,6 +18,10 @@ int main()
 	cout << "The Max Number is " << Get_Max(10, 20) << endl;
 	cout << "The Min Number is " << Get_Min(10, 20) << endl;
 	printhello();
+	char *str;
+	str = "Abc";
+	ToLower(str);
+
 	return 0;
 }
 

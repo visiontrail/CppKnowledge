@@ -1,7 +1,8 @@
 #include <stdlib.h>
 
-int Get_Max(int a, int b)
+int Get_Max2(int a, int b)
 {
+    printf("enter para is %d,%d",a,b);
     if (a > b)
     {
         return a;
@@ -12,8 +13,9 @@ int Get_Max(int a, int b)
     }
 }
 
-int Get_Min(int a, int b)
+int Get_Min2(int a, int b)
 {
+    printf("enter para is %d,%d",a,b);
     if (a > b)
     {
         return a;
