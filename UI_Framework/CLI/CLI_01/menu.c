@@ -34,8 +34,11 @@ int main()
     while(1)
     {
         char cmd[CMD_MAX_LEN];
+
         printf("Please input a cmd number ->");
         scanf("%s",cmd);
+
+		// 将这个链表传入FindCmd，看看用户输入的是否匹配
         tDataNode *p = FindCmd(head, cmd);
 
         if(p == NULL)

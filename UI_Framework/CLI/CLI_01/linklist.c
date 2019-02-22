@@ -3,9 +3,9 @@
 #include "linklist.h"
 
 /*这是一个拆分模块程序 */
-
 tDataNode* FindCmd(tDataNode * head, char * cmd)
 {
+	// 入参检查;
 	if(head == NULL || cmd == NULL)
 	{
 	    return NULL;
