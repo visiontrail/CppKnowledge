@@ -56,12 +56,14 @@ int main()
     }
 }
 
+// 显示内容
 int menu()
 {
     ShowAllCmd(head);
     return 0;
 }
 
+// 推出程序
 int quit()
 {
     exit(0);

@@ -26,6 +26,7 @@ tDataNode* FindCmd(tDataNode * head, char * cmd)
 	return NULL;
 }
 
+// 打印全部命令
 int ShowAllCmd(tDataNode * head)
 {
 	printf("Menu List:\n");

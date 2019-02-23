@@ -9,6 +9,8 @@ typedef struct DataNode
 	int (*handler)(); 	//函数指针
 	struct DataNode * next;
 }tDataNode;
-//方法声明
+
+// 查找命令
 tDataNode * FindCmd(tDataNode * head, char * cmd);
+// 显示全部命令
 int ShowAllCmd(tDataNode * head);
