@@ -20,10 +20,10 @@
  *
  */
 
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <pthread.h>
-#include"linktable.h"
+#include "linktable.h"
 
 /*
  * LinkTable Type
@@ -32,19 +32,17 @@ struct LinkTable
 {
     tLinkTableNode *pHead;
     tLinkTableNode *pTail;
-    int			SumOfNode;
+    int SumOfNode;
     pthread_mutex_t mutex;
-
 };
-
 
 /*
  * Create a LinkTable
  */
-tLinkTable * CreateLinkTable()
+tLinkTable *CreateLinkTable()
 {
-    tLinkTable * pLinkTable = (tLinkTable *)malloc(sizeof(tLinkTable));
-    if(pLinkTable == NULL)
+    tLinkTable *pLinkTable = (tLinkTable *)malloc(sizeof(tLinkTable));
+    if (pLinkTable == NULL)
     {
         return NULL;
     }
@@ -60,16 +58,16 @@ tLinkTable * CreateLinkTable()
  */
 int DeleteLinkTable(tLinkTable *pLinkTable)
 {
-    if(pLinkTable == NULL)
+    if (pLinkTable == NULL)
     {
         return FAILURE;
     }
-    while(pLinkTable->pHead != NULL)
+    while (pLinkTable->pHead != NULL)
     {
-        tLinkTableNode * p = pLinkTable->pHead;
+        tLinkTableNode *p = pLinkTable->pHead;
         pthread_mutex_lock(&(pLinkTable->mutex));
         pLinkTable->pHead = pLinkTable->pHead->pNext;
-        pLinkTable->SumOfNode -= 1 ;
+        pLinkTable->SumOfNode -= 1;
         pthread_mutex_unlock(&(pLinkTable->mutex));
         free(p);
     }
@@ -78,25 +76,25 @@ int DeleteLinkTable(tLinkTable *pLinkTable)
     pLinkTable->SumOfNode = 0;
     pthread_mutex_destroy(&(pLinkTable->mutex));
     free(pLinkTable);
-    return SUCCESS;		
+    return SUCCESS;
 }
 
 /*
  * Add a LinkTableNode to LinkTable
  */
-int AddLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode)
+int AddLinkTableNode(tLinkTable *pLinkTable, tLinkTableNode *pNode)
 {
-    if(pLinkTable == NULL || pNode == NULL)
+    if (pLinkTable == NULL || pNode == NULL)
     {
         return FAILURE;
     }
     pNode->pNext = NULL;
     pthread_mutex_lock(&(pLinkTable->mutex));
-    if(pLinkTable->pHead == NULL)
+    if (pLinkTable->pHead == NULL)
     {
         pLinkTable->pHead = pNode;
     }
-    if(pLinkTable->pTail == NULL)
+    if (pLinkTable->pTail == NULL)
     {
         pLinkTable->pTail = pNode;
     }
@@ -105,68 +103,68 @@ int AddLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode)
         pLinkTable->pTail->pNext = pNode;
         pLinkTable->pTail = pNode;
     }
-    pLinkTable->SumOfNode += 1 ;
+    pLinkTable->SumOfNode += 1;
     pthread_mutex_unlock(&(pLinkTable->mutex));
-    return SUCCESS;		
+    return SUCCESS;
 }
 
 /*
  * Delete a LinkTableNode from LinkTable
  */
-int DelLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode)
+int DelLinkTableNode(tLinkTable *pLinkTable, tLinkTableNode *pNode)
 {
-    if(pLinkTable == NULL || pNode == NULL)
+    if (pLinkTable == NULL || pNode == NULL)
     {
         return FAILURE;
     }
     pthread_mutex_lock(&(pLinkTable->mutex));
-    if(pLinkTable->pHead == pNode)
+    if (pLinkTable->pHead == pNode)
     {
         pLinkTable->pHead = pLinkTable->pHead->pNext;
-        pLinkTable->SumOfNode -= 1 ;
-        if(pLinkTable->SumOfNode == 0)
+        pLinkTable->SumOfNode -= 1;
+        if (pLinkTable->SumOfNode == 0)
         {
-            pLinkTable->pTail = NULL;	
+            pLinkTable->pTail = NULL;
         }
         pthread_mutex_unlock(&(pLinkTable->mutex));
         return SUCCESS;
     }
-    tLinkTableNode * pTempNode = pLinkTable->pHead;
-    while(pTempNode != NULL)
-    {    
-        if(pTempNode->pNext == pNode)
+    tLinkTableNode *pTempNode = pLinkTable->pHead;
+    while (pTempNode != NULL)
+    {
+        if (pTempNode->pNext == pNode)
         {
             pTempNode->pNext = pTempNode->pNext->pNext;
-            pLinkTable->SumOfNode -= 1 ;
-            if(pLinkTable->SumOfNode == 0)
+            pLinkTable->SumOfNode -= 1;
+            if (pLinkTable->SumOfNode == 0)
             {
-                pLinkTable->pTail = NULL;	
+                pLinkTable->pTail = NULL;
             }
             pthread_mutex_unlock(&(pLinkTable->mutex));
-            return SUCCESS;				    
+            return SUCCESS;
         }
         pTempNode = pTempNode->pNext;
     }
     pthread_mutex_unlock(&(pLinkTable->mutex));
-    return FAILURE;		
+    return FAILURE;
 }
 
 /*
  * Search a LinkTableNode from LinkTable
  * int Conditon(tLinkTableNode * pNode);
  */
-tLinkTableNode * SearchLinkTableNode(tLinkTable *pLinkTable, int Conditon(tLinkTableNode * pNode, void * args), void * args)
+tLinkTableNode *SearchLinkTableNode(tLinkTable *pLinkTable, int Conditon(tLinkTableNode *pNode, void *args), void *args)
 {
-    if(pLinkTable == NULL || Conditon == NULL)
+    if (pLinkTable == NULL || Conditon == NULL)
     {
         return NULL;
     }
-    tLinkTableNode * pNode = pLinkTable->pHead;
-    while(pNode != NULL)
-    {    
-        if(Conditon(pNode,args) == SUCCESS)
+    tLinkTableNode *pNode = pLinkTable->pHead;
+    while (pNode != NULL)
+    {
+        if (Conditon(pNode, args) == SUCCESS)
         {
-            return pNode;				    
+            return pNode;
         }
         pNode = pNode->pNext;
     }
@@ -176,33 +174,32 @@ tLinkTableNode * SearchLinkTableNode(tLinkTable *pLinkTable, int Conditon(tLinkT
 /*
  * get LinkTableHead
  */
-tLinkTableNode * GetLinkTableHead(tLinkTable *pLinkTable)
+tLinkTableNode *GetLinkTableHead(tLinkTable *pLinkTable)
 {
-    if(pLinkTable == NULL)
+    if (pLinkTable == NULL)
     {
         return NULL;
-    }    
+    }
     return pLinkTable->pHead;
 }
 
 /*
  * get next LinkTableNode
  */
-tLinkTableNode * GetNextLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode)
+tLinkTableNode *GetNextLinkTableNode(tLinkTable *pLinkTable, tLinkTableNode *pNode)
 {
-    if(pLinkTable == NULL || pNode == NULL)
+    if (pLinkTable == NULL || pNode == NULL)
     {
         return NULL;
     }
-    tLinkTableNode * pTempNode = pLinkTable->pHead;
-    while(pTempNode != NULL)
-    {    
-        if(pTempNode == pNode)
+    tLinkTableNode *pTempNode = pLinkTable->pHead;
+    while (pTempNode != NULL)
+    {
+        if (pTempNode == pNode)
         {
-            return pTempNode->pNext;				    
+            return pTempNode->pNext;
         }
         pTempNode = pTempNode->pNext;
     }
     return NULL;
 }
-

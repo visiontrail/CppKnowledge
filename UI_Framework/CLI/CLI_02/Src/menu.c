@@ -1,23 +1,12 @@
 
 /**************************************************************************************************/
-/* Copyright (C) mc2lab.com, SSE@USTC, 2014-2015                                                  */
-/*                                                                                                */
 /*  FILE NAME             :  menu.c                                                               */
-/*  PRINCIPAL AUTHOR      :  Mengning                                                             */
-/*  SUBSYSTEM NAME        :  menu                                                                 */
 /*  MODULE NAME           :  menu                                                                 */
 /*  LANGUAGE              :  C                                                                    */
 /*  TARGET ENVIRONMENT    :  ANY                                                                  */
-/*  DATE OF FIRST RELEASE :  2014/08/31                                                           */
+/*  DATE OF FIRST RELEASE :  2019/2/24                                                            */
 /*  DESCRIPTION           :  This is a menu program                                               */
 /**************************************************************************************************/
-
-/*
- * Revision log:
- *
- * Created by Mengning, 2014/08/31
- *
- */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,7 +26,7 @@ int Quit();
 char prompt[CMD_MAX_LEN] = "Input Cmd >";
 
 /* data struct and its operations 
-* 系统支持的命令格式
+* 保存系统支持的命令的链表节点
 * 包含命令名称、命令描述、要执行命令的函数指针
 */
 typedef struct DataNode
@@ -75,6 +64,7 @@ tDataNode *FindCmd(tLinkTable *head, char *cmd)
 }
 
 /* show all cmd in listlist */
+// Help函数调用，打印全局链表中所有的命令内容
 int ShowAllCmd(tLinkTable *head)
 {
     tDataNode *pNode = (tDataNode *)GetLinkTableHead(head);
@@ -135,6 +125,7 @@ int MenuConfig(char *cmd, char *desc, int (*handler)())
 }
 
 /* Menu Engine Execute */
+// 主函数调用，等待以及处理用户输入的命令
 int ExecuteMenu()
 {
     /* cmd line begins */
@@ -144,7 +135,7 @@ int ExecuteMenu()
         int argc = 0;
         char *argv[CMD_MAX_ARGV_NUM];
         char cmd[CMD_MAX_LEN];
-        char *pcmd = NULL;
+        char *pcmd = NULL; // 接收用户输入的命令
 
         printf("%s", prompt);
         /* scanf("%s", cmd); */
@@ -152,11 +143,13 @@ int ExecuteMenu()
         pcmd = fgets(cmd, CMD_MAX_LEN, stdin);
         if (pcmd == NULL)
         {
-            printf("Please inter a cmd，help for check the cmd list\n");
+            printf("Please inter a cmd，“help” for check the cmd list\n");
             continue;
         }
 
-        /* convert cmd to argc/argv */
+        /* 将用户输入的内容转化为argc和argv */
+        // argc表示用户输入的命令和参数数量
+        // argv表示用户输入的内容
         pcmd = strtok(pcmd, " "); //切割字符串，将pcmd通过空格切分成子串
         while (pcmd != NULL && argc < CMD_MAX_ARGV_NUM)
         {
@@ -165,20 +158,30 @@ int ExecuteMenu()
             pcmd = strtok(NULL, " ");
         }
 
-        printf("The argc is %d and argv is %s\n", argc, argv);
+        /*
+        for (int i = 0; i < argc; i++)
+        {
+            printf("The argc%d and argv is %s\n", i, argv[i]);
+        }
+        */
 
+        // argc为1的话，证明用户输入的仅有一条不带参数的命令
         if (argc == 1)
         {
-            int len = strlen(argv[0]);
-            *(argv[0] + len - 1) = '\0';
+            int len = strlen(argv[0]);   // 获取用户输入的命令长度
+            *(argv[0] + len - 1) = '\0'; // 将用户输入的内容长度……？
+            //printf("after progress is %s %d \n",argv[0],len);
         }
 
+        // 检索用户输入的值是否在全局链表之中
         tDataNode *p = (tDataNode *)SearchLinkTableNode(head, SearchConditon, (void *)argv[0]);
+        // 如果不在，则继续执行等待用户输入
         if (p == NULL)
         {
             continue;
         }
         printf("%s - %s\n", p->cmd, p->desc);
+        // 如果对应的函数指针存储不为NULL，则执行该函数指针
         if (p->handler != NULL)
         {
             p->handler(argc, argv);
