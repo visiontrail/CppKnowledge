@@ -5,12 +5,11 @@
 #include <vector>
 #include <list>
 #include <stack>
+#include <string>
 
-
-using std::vector;
 using std::list;
 using std::string;
-
+using std::vector;
 
 struct GenericContainer
 {

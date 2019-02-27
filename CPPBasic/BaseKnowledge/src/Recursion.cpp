@@ -4,6 +4,10 @@
 
 using namespace std;
 
+/*
+*  递归的使用说明
+*/
+
 int Jiecheng(const int n)
 {
 	if (0 >= n)
@@ -20,5 +24,4 @@ int Jiecheng(const int n)
 		// 递归的本质是将问题拆解，即将n!拆解为n*!(n-1);
 		return n * Jiecheng(n - 1);
 	}
-
 }
