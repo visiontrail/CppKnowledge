@@ -1,9 +1,17 @@
+/*************************************************
+* 文件功能：两个线程同时访问一个冲突域的数据发生的错误
+* 创建时间：2019-2-27
+* 创建人：郭亮
+**************************************************/
+
 #include <pthread.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
 
+// 冲突域数据，被两个线程同时访问
 int myglobal;
+
 void *thread_function(void *arg)
 {
     int i, j;
