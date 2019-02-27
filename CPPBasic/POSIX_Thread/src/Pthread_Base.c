@@ -15,17 +15,25 @@ void *thread_function(void *arg)
 
 int main(void)
 {
-    pthread_t mythread;
+    pthread_t mythread; // 线程ID，可以认为它是一个线程句柄
 
+    // 调用pthread_create则是真正建立了一个活动线程
+    // 当第三个参数，这个函数被创建的线程回调，当return返回时，该线程自动退出
     if (pthread_create(&mythread, NULL, thread_function, NULL))
     {
         printf("error creating thread.");
         abort();
     }
+
+    printf("Mian Thread continue \n");
+
+    // 以阻塞的方式等待mythread线程结束，当这个mythread结束后，将两个线程合并成为一个
+    // 如果调用这个函数，主线程会中断（转向睡眠等待mythread线程执行结束）
     if (pthread_join(mythread, NULL))
     {
         printf("error joining thread.");
         abort();
     }
-    exit(0);
+    printf("Mian Thread now finish \n");
+    //exit(0);
 }
