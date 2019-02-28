@@ -2,10 +2,13 @@
 #include <string>
 #include <set>
 
-using std::cout;    using std::endl;
-using std::string;  using std::set;
+using std::cout;
+using std::endl;
+using std::set;
+using std::string;
 
-int main() {
+int main()
+{
     // The set data structure can be thought of as a checklist of items. We can
     // add elements to a set, or remove elements from one. Then, we can ask the
     // set if it contains a particular item or not.
@@ -20,25 +23,34 @@ int main() {
     groceryList.insert("PROTEIN!!");
 
     // This set contains "milk".
-    if (groceryList.count("milk")) {
+    if (groceryList.count("milk"))
+    {
         cout << "We are getting milk!" << endl;
-    } else {
+    }
+    else
+    {
         cout << "Well, no use crying..." << endl;
     }
 
     // This set does not contain "butter".
-    if (groceryList.count("butter")) {
+    if (groceryList.count("butter"))
+    {
         cout << "We are getting butter!" << endl;
-    } else {
+    }
+    else
+    {
         cout << "You had butter not..." << endl;
     }
 
     // This set used to contain "eggs", but the call to .erase(...) removes it
     // from the set.
     groceryList.erase("eggs");
-    if (groceryList.count("eggs")) {
+    if (groceryList.count("eggs"))
+    {
         cout << "We are getting eggs!" << endl;
-    } else {
+    }
+    else
+    {
         cout << "Rotten choice..." << endl;
     }
 

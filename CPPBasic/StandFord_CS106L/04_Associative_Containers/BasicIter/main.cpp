@@ -3,10 +3,12 @@
 #include <iostream>
 #include <set>
 
-using std::cout;    using std::endl;
+using std::cout;
+using std::endl;
 using std::set;
 
-int main() {
+int main()
+{
     // We first populate this set of integers with the numbers from 0 to 9,
     // inclusive.
     set<int> container;
@@ -20,16 +22,17 @@ int main() {
     // then instruct the iterator to move to the next location (++itr).
 
     set<int>::iterator itr = container.begin();
-    while (itr != container.end()) {
+    while (itr != container.end())
+    {
         cout << *itr << ' ';
         ++itr;
     }
     cout << endl;
 
     // alternatively:
-
     set<int>::iterator itr2;
-    for(itr2 = container.begin(); itr2 != container.end(); ++itr2) {
+    for (itr2 = container.begin(); itr2 != container.end(); ++itr2)
+    {
         cout << *itr2 << ' ';
     }
 
