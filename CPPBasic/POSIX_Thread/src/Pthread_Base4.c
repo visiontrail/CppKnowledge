@@ -5,7 +5,6 @@
 * 创建人：郭亮
 **********************************************************************/
 #include <pthread.h>
-#include "errors.h"
 
 
 void *thread_routine(void *arg)
@@ -26,14 +25,16 @@ int main(int argc, char *argv[])
     status = pthread_create(&thread1, NULL, thread_routine, "thread 1");
     if (status != 0)
     {
-        err_abort(status, "Create thread 1");
+        printf("Create thread 1 failed");
     }
 
     status = pthread_create(&thread2, NULL, thread_routine, "thread 2");
     if (status != 0)
     {
-        err_abort(status, "Create thread 2");
+        printf("Create thread 2 failed");
     }
+
+    printf("Main Thread is waiting\n");
     
     pthread_exit(NULL);
 }
