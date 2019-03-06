@@ -11,7 +11,7 @@ cmake_minimum_required (VERSION 2.6)
 project(Pthread_base)
 
 if(CMAKE_SYSTEM_NAME STREQUAL Windows)
-	message("++ This OS is " ${CMAKE_SYSTEM_NAME} " The Define can be used in cross complie!")
+	message(FATAL_ERROR "++ This OS is " ${CMAKE_SYSTEM_NAME} " The Program CAN NOT cross complie! ++")
 elseif(CMAKE_SYSTEM_NAME STREQUAL Linux)
 	message("++ This OS is " ${CMAKE_SYSTEM_NAME} " The Define can be used in cross complie!")
 endif ()
