@@ -11,15 +11,15 @@ using std::string;
 
 class StrVec
 {
-public:
-	StrVec() : first_elem(nullptr), first_free(nullptr), cap(nullptr) 
+  public:
+	StrVec() : first_elem(nullptr), first_free(nullptr), cap(nullptr)
 	{
 		alloc.allocate(100);
 	}
-	StrVec(const StrVec&);
-	StrVec &operator=(const StrVec&);
+	StrVec(const StrVec &);
+	StrVec &operator=(const StrVec &);
 	~StrVec();
-	void push_back(const string&);
+	void push_back(const string &);
 	size_t size() const
 	{
 		return first_free - first_elem;
@@ -28,16 +28,17 @@ public:
 	{
 		return cap - first_elem;
 	}
-	string* begin() const
+	string *begin() const
 	{
 		return first_elem;
 	}
-	string* end() const
+	string *end() const
 	{
 		return first_free;
 	}
-protected:
-private:
+
+  protected:
+  private:
 	void chk_n_alloc()
 	{
 		if (this->size() == this->capcity())
@@ -45,13 +46,13 @@ private:
 			reallocator();
 		}
 	}
-	std::pair<string*, string*> alloc_n_copy(const string*, const string*);
+	std::pair<string *, string *> alloc_n_copy(const string *, const string *);
 	void reallocator();
 	void free();
-	string *first_elem;                     // 指向第一个元素;
-	string *first_free;                     // 指向最后一个元素之后;
-	string *cap;                            // 指向所分配内存之后;
-	static std::allocator<string> alloc;           // 所分配的内存;
+	string *first_elem;					 // 指向第一个元素;
+	string *first_free;					 // 指向最后一个元素之后;
+	string *cap;						 // 指向所分配内存之后;
+	static std::allocator<string> alloc; // 所分配的内存;
 };
 
 #endif
