@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Tree.h"
 
 std::vector<int> g_Ret;

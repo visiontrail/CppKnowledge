@@ -6,10 +6,8 @@ extern "C"
 {
 #endif
 
-
     int Get_Min(int a, int b);
     int Get_SomeUndef();
-
 
 #ifdef __cplusplus
 };

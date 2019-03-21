@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Binary_Tree.h"
 
 
