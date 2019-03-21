@@ -15,8 +15,8 @@ using namespace std;
 class CallBackInterface
 {
   private:
-    Employee emp01;                              // 注册所有的Employee类型
-    
+    Employee emp01; // 注册所有的Employee类型
+
   public:
     CallBackInterface();
     ~CallBackInterface();

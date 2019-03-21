@@ -9,7 +9,6 @@ install-sh
 missing
 stamp-h1
 Makefile.in
-Makefile
 ltmain.sh
 libtool
 configure
