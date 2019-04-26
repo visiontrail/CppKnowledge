@@ -46,10 +46,30 @@ Boss::~Boss()
 {
 }
 
+void func(int &a)
+{
+    printf("a %d \n",a);
+    printf("sizeofa %d \n",sizeof(a));
+}
+
+void func2(int *a)
+{
+    printf("222a %d \n",*a);
+    printf("222sizeofa %d \n",sizeof(a));
+}
+
 int main(int argc, char const *argv[])
 {
     Boss boss;
     boss.do_work_a();
+
+    int ia = 10;
+    int *pa;
+    char *pc = "aa";
+    printf("szof point：%d \n", sizeof(pc));
+    func(ia);
+    func2(&ia);
+
     cout << "Boss Waiting for report" << endl;
     while(1){
         /* code */
