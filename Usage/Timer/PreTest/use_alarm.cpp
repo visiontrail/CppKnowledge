@@ -23,7 +23,7 @@ void sigalrm_func(int sig)
 
 int main(void)
 {
-    signal(SIGALRM, sigalrm_func); // step1:注册一个信号量
+    signal(SIGALRM, sigalrm_func); // step1:SIGALRM信号是系统信号，将该信号注册给一个处理函数
     alarm(10);                     // step2:启动这个信号量，时间为10秒
     printf("start frist sigalarm\n");
 
