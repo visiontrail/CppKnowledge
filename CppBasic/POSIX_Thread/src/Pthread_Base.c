@@ -24,6 +24,14 @@ int main(void)
 {
     pthread_t mythread; // 线程ID，可以认为它是一个线程句柄
 
+    /*
+     * pthread_create 用法:
+     * 参数1：
+     * 参数2：
+     * 参数3：
+     * 参数4：
+    */ 
+    
     // 调用pthread_create则是真正建立了一个活动线程
     // 当第三个参数，这个函数被创建的线程回调，当return返回时，该线程自动退出
     if (pthread_create(&mythread, NULL, thread_function, NULL))
