@@ -1,6 +1,9 @@
 // bind example
-#include <iostream>   // std::cout
-#include <functional> // std::bind
+#include <stdlib.h>
+#include <iostream>
+#include <functional>
+
+using namespace std;
 
 // a function: (also works with function object: std::divides<double> my_divide;)
 double my_divide(double x, double y) { return x / y; }
@@ -30,7 +33,7 @@ int main()
 
     MyPair ten_two{10, 2};
 
-	std::cout << "struct My pair ten_two multiply is" << ten_two.multiply() << std::endl;
+    std::cout << "struct My pair ten_two multiply is" << ten_two.multiply() << std::endl;
 
     // binding members:
     auto bound_member_fn = std::bind(&MyPair::multiply, _1); // returns x.multiply()
@@ -38,7 +41,6 @@ int main()
 
     auto bound_member_data = std::bind(&MyPair::a, ten_two); // returns ten_two.a
     std::cout << bound_member_data() << '\n';                // 10
-
 
     return 0;
 }

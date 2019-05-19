@@ -3,10 +3,12 @@
 #include <string>
 #include <iostream>
 #include <functional>
+
 using namespace std;
+
 class Func
 {
-  public:
+public:
     int sum;
     Func()
     {
