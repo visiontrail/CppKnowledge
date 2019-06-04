@@ -14,7 +14,7 @@ TARGET  := getftp
 #编译参数
 CC      := gcc
 LIBS    := -lcurl -lstdc++
-LDFLAGS := -L../lib/
+LDFLAGS := -L../../lib/
 DEFINES :=
 INCLUDE := 
 CFLAGS  := $(DEFINES) $(INCLUDE)

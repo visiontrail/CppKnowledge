@@ -66,7 +66,7 @@ int main(void)
     curl_easy_setopt(curl, CURLOPT_URL, "ftp://172.21.16.26/CertusNetOAM/README.md");
     curl_easy_setopt(curl, CURLOPT_USERPWD, "root:");
 
-    // 从FTP服务器下载并写文件的回调函数注册
+    // 从FTP服务器下载完成之后并写文件的回调函数注册
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, my_fwrite);
 
     // 指定文件名
