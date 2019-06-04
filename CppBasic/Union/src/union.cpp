@@ -2,6 +2,7 @@
 #include <iostream>
 #include "union.h"
 
+using namespace std;
 
 int main(int argc, char **argv)
 {
@@ -14,7 +15,7 @@ int main(int argc, char **argv)
     data.a = ud;
     data.b = &u1;
 
-    printf("data:%d \n", data.b->a);
+    cout << "print:" << data.b->a << endl;
     return 0;
 }
 
