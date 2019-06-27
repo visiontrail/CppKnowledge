@@ -1,3 +1,9 @@
+/*
+ * 说明：该类型主要说明了以下几个知识点：
+ * 1、什么是拷贝构造函数，及其作用
+ * 2、重载类型的运算符
+*/
+
 #include "stdafx.h"
 #include "Sales_data.h"
 
@@ -28,6 +34,10 @@ Sales_data::Sales_data(const Sales_data &copyobj) :
 	std::cout << "我是通过拷贝构造函数赋值生成的;" << std::endl;
 }
 
+/*
+ * 作用：重载等于运算符
+ * 说明：
+*/
 Sales_data& Sales_data::operator=(const Sales_data &obj)
 {
 	this->Book_Isbn = "Copyfromoperator;";

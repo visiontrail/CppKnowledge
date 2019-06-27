@@ -25,12 +25,12 @@ typedef struct tcp_content
 {
     int data1;
     int data2;
-}data;
+}content;
 
 typedef struct tcp_client_data
 {
     header header;
-    data data;
+    content data;
 }tcp_data;
 
 in_addr_t IPtoInt(char *str_ip)
@@ -50,8 +50,11 @@ int main(int argc, char **argv)
     unsigned int sin_size, myport = 6666, lisnum = 10;
     int keyboard;
 
-    tcp_data *data;
+    content *data;
+    header *hd;
 
+    content data2;
+    
     // 打开文件，获得这个文件的文件描述符（或称访问句柄也可以）
     keyboard = open("/dev/tty", O_RDONLY | O_NONBLOCK);
 
@@ -175,8 +178,15 @@ int main(int argc, char **argv)
                     return -1;
                 }
 
-                data = (tcp_data*)buffer;
-                printf("recv : %d\n", data->data.data2);
+                hd = (header*)buffer;
+                printf("recv header : %d\n", hd->header1);
+
+                data = (tcp_data*)((char*)hd + sizeof(header));
+                printf("recv data : %d\n", data->data1);
+
+                memcpy(&data2, data, sizeof(content));
+                printf("cp data : %d\n", data2.data1);
+
                 //更新maxsock,因为下一次进入while循环调用时，需要传当前最大的fd值+1给select函数
                 if (sock_client > maxsock)
                 {

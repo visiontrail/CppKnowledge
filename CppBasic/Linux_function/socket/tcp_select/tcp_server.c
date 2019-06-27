@@ -28,7 +28,11 @@ int main(int argc, char **argv)
     struct sockaddr_in their_addr; /* 客户地址信息 */
     unsigned int sin_size, myport = 6666, lisnum = 10;
 
-    if ((serverfd = socket(AF_INET, SOCK_STREAM, 0)) == -1)
+    // socket相当于一个普通文件打开操作,返回一个socket文件描述符
+    // 参数一，protofamily：协议族，AF_INET(ipv4),AF_INET6(ipv6),AF_LOCAL等等
+    // 参数二，type：socket类型，SOCK_STREAM(TCP)、SOCK_DGRAM(UDP)、SOCK_RAW、SOCK_PACKET、SOCK_SEQPACKET等等
+    // 参数三，protocol：协议，IPPROTO_TCP、IPPTOTO_UDP、IPPROTO_SCTP、IPPROTO_TIPC
+    if ((serverfd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) == -1)
     {
         perror("socket");
         return -1;
