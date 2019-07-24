@@ -16,7 +16,6 @@ void push_back(const std::string &d)
     data->push_back(d);
 }
 
-private:
 std::shared_ptr<std::vector<std::string>> data;
 };
 
