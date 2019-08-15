@@ -17,30 +17,21 @@ TARGET  := main
 CC      := gcc
 LIBS    := -lstdc++
 LDFLAGS := 
-DEFINES := 
+DEFINES := -g
 INCLUDE := -I./inc
 CFLAGS  := $(DEFINES) $(INCLUDE)
 CXXFLAGS:= $(CFLAGS)
-  
-  
-#i think you should do anything here
-#下面的基本上不需要做任何改动了
+
 .PHONY : everything objs clean veryclean rebuild
-  
-everything : $(TARGET)
-  
-all : $(TARGET)
-  
-objs : $(OBJS1) $(OBJS2)
+
+all :  clean $(TARGET) 
   
 rebuild: veryclean everything
                 
 clean :
 	rm -fr *.so
 	rm -fr *.o
+	rm $(TARGET)
     
-veryclean : clean
-	rm -fr $(TARGET)
-  
 $(TARGET) : $(OBJS1) $(OBJS2)
-	$(CC) $(CXXFLAGS) -o $@ $(OBJS1) $(OBJS2) $(LDFLAGS) $(LIBS)
+	$(CC)  $(CXXFLAGS) -o $@ $(OBJS1) $(OBJS2) $(LDFLAGS) $(LIBS)
