@@ -6,6 +6,10 @@
 
 using namespace std;
 
+/*
+ * 
+*/
+
 class Func
 {
 public:
