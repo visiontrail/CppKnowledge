@@ -26,8 +26,10 @@ int main()
 
     std::thread t1(f);
     std::thread t2(f); // 在二个线程上调用 f()
+    std::thread t3(f); // 在三个线程上调用 f()
     t1.join();
     t2.join();
+    t3.join();
 
     std::clock_t c_end = std::clock();
     auto t_end = std::chrono::high_resolution_clock::now();

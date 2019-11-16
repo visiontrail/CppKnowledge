@@ -6,18 +6,18 @@
   
 #target you can change test to what you want
 #目标文件名，输入任意你想要的执行文件名
-TARGET  := func
+TARGET  := clock
 
 BINDSOURCE = clock.cpp
   
 #compile and lib parameter
 #编译参数
 CC      := g++
-LIBS    := 
+LIBS    := -lpthread -std=c++17
 LDFLAGS := 
 DEFINES :=
 INCLUDE := 
-CFLAGS  := $(DEFINES) $(INCLUDE) -std=c++11
+CFLAGS  := $(DEFINES) $(INCLUDE) 
 CXXFLAGS:= $(CFLAGS)
   
   
@@ -41,8 +41,5 @@ clean :
 veryclean : clean
 	rm -fr $(TARGET) $(TARGET2)
   
-$(TARGET2) : $(OBJS)
-	$(CC) $(CXXFLAGS) -o $@ $(BINDSOURCE)
-
 $(TARGET) : $(OBJS)
-	$(CC) $(CXXFLAGS) -o $@ $(FUNCTIONSOURCE)
+	$(CC) $(CXXFLAGS) -o $@ $(BINDSOURCE) $(LIBS)
