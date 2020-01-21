@@ -17,7 +17,7 @@ ar--lib
 **/.deps
 *.m4
 *.lo
-*.guess
+*.guessgaishu
 *.sub
 *.log
 *.o
@@ -55,3 +55,10 @@ CppBasic/Linux_function/socket/tcp_select/server2
 Usage/FTP/Linux/libCurl/ftp_client/ftp_get/DownReadme.md
 Usage/FTP/Linux/libCurl/ftp_client/ftp_get/getftp
 CppBasic/STL/time/clock
+
+CppBasic/Boost/archive/text_outarchive/text/text_oarchive
+CppBasic/Boost/archive/text_inarchive/text/text_iarchive
+CppBasic/Boost/archive/xml/xml_archive
+CppBasic/Boost/archive/text/text_outarchive/text_oarchive
+CppBasic/Boost/archive/text/text_inarchive/text_iarchive
+CppBasic/Boost/archive/xml/xml1/xml_archive
