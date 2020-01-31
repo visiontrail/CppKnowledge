@@ -17,5 +17,5 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL Linux)
 endif ()
 
 # 添加子文件夹
-ADD_SUBDIRECTORY(src)
+ADD_SUBDIRECTORY(base)
 

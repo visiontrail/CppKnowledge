@@ -40,7 +40,7 @@ int main(void)
         abort();
     }
 
-    printf("Mian Thread continue \n");
+    printf("Main Thread continue \n");
 
     // 以阻塞的方式等待mythread线程结束，当这个mythread结束后，将两个线程合并成为一个
     // 如果调用这个函数，主线程会中断（转向睡眠等待mythread线程执行结束）
@@ -49,6 +49,7 @@ int main(void)
         printf("error joining thread.");
         abort();
     }
-    printf("Mian Thread now finish \n");
+    
+    printf("Main Thread now finish \n");
     //exit(0);
 }

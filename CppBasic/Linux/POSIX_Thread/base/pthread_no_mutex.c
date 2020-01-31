@@ -31,11 +31,13 @@ int main(void)
 {
     pthread_t mythread;
     int i;
+    
     if (pthread_create(&mythread, NULL, thread_function, NULL))
     {
         printf("error creating thread.");
         abort();
     }
+
     for (i = 0; i < 20; i++)
     {
         myglobal = myglobal + 1;
@@ -43,6 +45,7 @@ int main(void)
         fflush(stdout); // 清空缓冲区，以免内存泄漏
         sleep(1);
     }
+
     if (pthread_join(mythread, NULL))
     {
         printf("error joining thread.");

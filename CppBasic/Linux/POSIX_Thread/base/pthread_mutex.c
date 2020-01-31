@@ -18,13 +18,11 @@ pthread_mutex_t mymutex = PTHREAD_MUTEX_INITIALIZER;
 // 当代码使用 malloc() 分配一个新的互斥对象时,以上的方法行不通
 // 需要调用pthread_mutex_init()：
 // 并同时使用pthread_mutex_destroy()消除
-
 void *thread_function(void *arg)
 {
     int i, j;
 
-
-        for (i = 0; i < 20; i++)
+    for (i = 0; i < 20; i++)
     {
         // 当这个线程访问以下对象的时候，其他线程都会进入睡眠状态，等待此线程释放锁
         pthread_mutex_lock(&mymutex);
