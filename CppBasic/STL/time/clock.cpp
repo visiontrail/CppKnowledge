@@ -8,6 +8,11 @@
  * 编译：gcc clock -o clock.cpp
 */
 
+
+/*
+ * 
+*/
+
 using namespace std;
 
 // 函数 f() 做一些耗时工作
