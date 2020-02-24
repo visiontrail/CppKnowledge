@@ -100,58 +100,80 @@ typedef struct stru_operational_info
 */
 std::string save()
 {
-    // std::ofstream file("archive.xml");
     std::string ret;
     std::stringstream ss;
     boost::archive::xml_oarchive oa(ss);
 
-    // float array[] = {34.2, 78.1, 22.221, 1.0, -910.88};
-    // int array2[] = {34, 78, 22, 10, -910};
-    // std::list<float> L1(array, array + 5);
-    // std::list<int> L2(array2, array2 + 5);
-    // std::vector<float> V1(array, array + 5);
-
     stru_operational_info stru_oi;
     stru_oi.declarations.supported_mplane_version = "version of 1.1";
+    stru_oi.declarations.supported_header_mechanisms.push_back(1);
+    stru_oi.declarations.supported_header_mechanisms.push_back(123);
     stru_oi.clock.timezone_utc_offset = 156;
     stru_oi.re_call_home_no_ssh_timer = 116;
 
-    // oa &BOOST_SERIALIZATION_NVP(L1); // 序列化
-    // oa &BOOST_SERIALIZATION_NVP(L2);
-    // oa &BOOST_SERIALIZATION_NVP(V1);
     oa &BOOST_SERIALIZATION_NVP(stru_oi);
 
     ret = ss.str();
-    // std::cout << ret << std::endl;
+    ret += "</boost_serialization>";
+
+    std::cout << "Save XML TO string stream: __________________________________________________________________ \n"
+              << ret << std::endl;
 
     return ret;
 }
 
+void save_file()
+{
+    std::ofstream file("archive.xml");
+    boost::archive::xml_oarchive oa(file);
+
+    stru_operational_info stru_oi;
+    stru_oi.declarations.supported_mplane_version = "version of 1.1";
+    stru_oi.declarations.supported_header_mechanisms.push_back(1);
+    stru_oi.declarations.supported_header_mechanisms.push_back(123);
+    stru_oi.clock.timezone_utc_offset = 156;
+    stru_oi.re_call_home_no_ssh_timer = 116;
+
+    oa &BOOST_SERIALIZATION_NVP(stru_oi);
+}
+
 void load(std::string ret)
 {
-    // std::ifstream file("archive.xml");
+    // std::ofstream ofile("archive2.xml");
+    // std::ostringstream oss;
+    // ofile.write(ret.c_str(), ret.length());
+    // ofile.close();
+    // std::ifstream ifile("archive2.xml");
+
+    std::cout << "Get XML from string stream: __________________________________________________________________ \n"
+              << ret << std::endl;
+
     std::stringstream iss;
     iss << ret;
+
     boost::archive::xml_iarchive ia(iss);
 
-    std::cout << iss.str() << std::endl;
-
-    // std::list<float> L2;
-    // ia >> BOOST_SERIALIZATION_NVP(L2);
-
-    // std::vector<float> V2;
-    // ia >> BOOST_SERIALIZATION_NVP(V2);
-
-    // stru_operational_info *stru_oi = new stru_operational_info;
     stru_operational_info stru_oi;
     ia >> BOOST_SERIALIZATION_NVP(stru_oi);
+    std::cout << "Get iarchive stru_oi.clock.timezone_utc_offset result is :"
+              << stru_oi.clock.timezone_utc_offset << std::endl;
+}
 
-    // std::ostream_iterator<float> oi(std::cout, " ");
-    // std::copy(L2.begin(), L2.end(), oi);
-    // std::copy(V2.begin(), V2.end(), oi);
+void load_file()
+{
+    std::ifstream file("archive.xml");
+
+    boost::archive::xml_iarchive ia(file);
+
+    stru_operational_info stru_oi;
+    ia >> BOOST_SERIALIZATION_NVP(stru_oi);
+    std::cout << stru_oi.clock.timezone_utc_offset << std::endl;
 }
 
 int main()
 {
+    // save_file();
+    // load_file();
+
     load(save());
 }
