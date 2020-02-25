@@ -1,0 +1,23 @@
+<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="23">
+    <data xmlns:wd="urn:ietf:params:xml:ns:netconf:default:1.0">
+        <mplane-info xmlns="urn:o-ran:mplane-interfaces:1.0">
+            <m-plane-interfaces>
+                <m-plane-sub-interfaces>
+                    <interface-name>ofp1</interface-name>
+                    <sub-interface>1</sub-interface>
+                </m-plane-sub-interfaces>
+                <m-plane-ssh-ports>
+                    <call-home-ssh-port wd:default="true">4334</call-home-ssh-port>
+                    <server-ssh-port wd:default="true">830</server-ssh-port>
+                </m-plane-ssh-ports>
+                <m-plane-server-type>
+                    <netconf-client-ip-type>ASSIGN_IP_BY_HAND</netconf-client-ip-type>
+                    <netconf-client-ipaddr>
+                        <mplane-ipv4>172.21.8.98</mplane-ipv4>
+                        <mplane-type>O-RAN-DU</mplane-type>
+                    </netconf-client-ipaddr>
+                </m-plane-server-type>
+            </m-plane-interfaces>
+        </mplane-info>
+    </data>
+</rpc-reply>

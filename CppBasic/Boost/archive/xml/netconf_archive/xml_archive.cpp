@@ -164,19 +164,15 @@ void load(std::string ret)
 
 void load_file()
 {
-    std::ifstream file("archive.xml");
+    std::ifstream file("netconf.xml");
+    std::stringstream iss;
 
-    boost::archive::xml_iarchive ia(file);
+    iss << file.rdbuf();
+    std::cout << iss.str() << std::endl;
 
-    stru_operational_info stru_oi;
-    ia >> BOOST_SERIALIZATION_NVP(stru_oi);
-    std::cout << stru_oi.clock.timezone_utc_offset << std::endl;
 }
 
 int main()
 {
-    // save_file();
-    // load_file();
-
-    load(save());
+    load_file();
 }
