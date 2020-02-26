@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <!DOCTYPE boost_serialization>
 <boost_serialization signature="serialization::archive" version="17">
-<stru_oi class_id="0" tracking_level="0" version="0">
-	<declarations class_id="1" tracking_level="0" version="0">
-		<supported_mplane_version>version of 1.1</supported_mplane_version>
-		<supported_cusplane_version></supported_cusplane_version>
-		<supported_header_mechanisms>
-			<count>2</count>
+	<stru_oi>
+		<declarations>
+			<count>1</count>
 			<item_version>0</item_version>
-			<item>1</item>
-			<item>123</item>
-		</supported_header_mechanisms>
-	</declarations>
-	<operational_state class_id="3" tracking_level="0" version="0">
-		<restart_datetime></restart_datetime>
-	</operational_state>
-	<clock class_id="4" tracking_level="0" version="0">
-		<timezone_utc_offset>156</timezone_utc_offset>
-	</clock>
-	<re_call_home_no_ssh_timer>116</re_call_home_no_ssh_timer>
-</stru_oi>
+			<item>
+				<supported_mplane_version>version of 1.1</supported_mplane_version>
+				<supported_cusplane_version></supported_cusplane_version>
+				<supported_header_mechanisms>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>1</item>
+					<item>123</item>
+				</supported_header_mechanisms>
+			</item>
+		</declarations>
+		<operational_state>
+			<restart_datetime></restart_datetime>
+		</operational_state>
+		<clock>
+			<timezone_utc_offset>112</timezone_utc_offset>
+		</clock>
+		<re_call_home_no_ssh_timer>116</re_call_home_no_ssh_timer>
+	</stru_oi>
 </boost_serialization>
 

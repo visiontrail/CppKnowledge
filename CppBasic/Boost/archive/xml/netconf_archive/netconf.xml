@@ -13,6 +13,11 @@
                 <m-plane-server-type>
                     <netconf-client-ip-type>ASSIGN_IP_BY_HAND</netconf-client-ip-type>
                     <netconf-client-ipaddr>
+                        <mplane-ipv4>172.21.6.113</mplane-ipv4>
+                        <mplane-type>O-RAN-DU</mplane-type>
+                        <port>4334</port>
+                    </netconf-client-ipaddr>
+                    <netconf-client-ipaddr>
                         <mplane-ipv4>172.21.8.98</mplane-ipv4>
                         <mplane-type>O-RAN-DU</mplane-type>
                     </netconf-client-ipaddr>
