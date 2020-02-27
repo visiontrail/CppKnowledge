@@ -118,24 +118,24 @@ typedef struct stru_m_plane_interfaces
 } stru_m_plane_interfaces;
 
 
-// typedef struct stru_m_plane_interfaces
-// {
-//     // 成员
-//     stru_m_plane_interfaces m_plane_interfaces;
+typedef struct stru_mplane_group
+{
+    // 成员
+    stru_m_plane_interfaces m_plane_interfaces;
 
-//     friend std::ostream &operator<<(std::ostream &out, stru_m_plane_interfaces &d)
-//     {
-//         out << "out stru_m_plane_interfaces";
-//         return out;
-//     }
+    friend std::ostream &operator<<(std::ostream &out, stru_mplane_group &d)
+    {
+        out << "out stru_mplane_group";
+        return out;
+    }
 
-//     template <class Archive>
-//     void serialize(Archive &archive, const unsigned int version)
-//     {
-//         archive &BOOST_SERIALIZATION_NVP(m_plane_interfaces);
-//     }
+    template <class Archive>
+    void serialize(Archive &archive, const unsigned int version)
+    {
+        archive &BOOST_SERIALIZATION_NVP(m_plane_interfaces);
+    }
 
-// } stru_m_plane_interfaces;
+} stru_mplane_group;
 
 /*
  * 利用输出流，将内存中的vectror、struct等内容转换为xml格式（序列化）为stringstream
@@ -166,10 +166,10 @@ void load_file()
     std::ifstream file("netconf_archive.xml");
     boost::archive::xml_iarchive ia(file);
 
-    stru_m_plane_interfaces m_plane_interfaces;
+    stru_mplane_group m_plane_interfaces;
     ia >> BOOST_SERIALIZATION_NVP(m_plane_interfaces);
     
-    std::cout << m_plane_interfaces.m_plane_ssh_ports.call_home_ssh_port << std::endl;
+    // std::cout << stru_oi.mp_interface.ssh_port.call_home_ssh_port << std::endl;
     
 }
 
