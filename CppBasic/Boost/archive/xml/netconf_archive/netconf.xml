@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="23">
     <data xmlns:wd="urn:ietf:params:xml:ns:netconf:default:1.0">
         <mplane-info xmlns="urn:o-ran:mplane-interfaces:1.0">
@@ -18,8 +19,9 @@
                         <port>4334</port>
                     </netconf-client-ipaddr>
                     <netconf-client-ipaddr>
-                        <mplane-ipv4>172.21.8.98</mplane-ipv4>
+                        <mplane-ipv4>172.21.6.114</mplane-ipv4>
                         <mplane-type>O-RAN-DU</mplane-type>
+                        <port>3456</port>
                     </netconf-client-ipaddr>
                 </m-plane-server-type>
             </m-plane-interfaces>
