@@ -100,27 +100,27 @@ typedef struct stru_operational_info
 */
 std::string save()
 {
-    // std::string ret;
-    // std::stringstream ss;
-    // boost::archive::xml_oarchive oa(ss);
+    std::string ret;
+    std::stringstream ss;
+    boost::archive::xml_oarchive oa(ss);
 
-    // stru_operational_info stru_oi;
-    // stru_oi.declarations.supported_mplane_version = "version of 1.1";
-    // stru_oi.declarations.supported_header_mechanisms.push_back(1);
-    // stru_oi.declarations.supported_header_mechanisms.push_back(123);
-    // stru_oi.clock.timezone_utc_offset = 156;
-    // stru_oi.re_call_home_no_ssh_timer = 116;
+    stru_operational_info stru_oi;
+    stru_oi.declarations.supported_mplane_version = "version of 1.1";
+    stru_oi.declarations.supported_header_mechanisms.push_back(1);
+    stru_oi.declarations.supported_header_mechanisms.push_back(123);
+    stru_oi.clock.timezone_utc_offset = 156;
+    stru_oi.re_call_home_no_ssh_timer = 116;
 
-    // // Binary ---> XML
-    // oa &BOOST_SERIALIZATION_NVP(stru_oi);
+    // Binary ---> XML
+    oa &BOOST_SERIALIZATION_NVP(stru_oi);
 
-    // ret = ss.str();
-    // ret += "</boost_serialization>"; // streamstream序列化的时候，缺少了最终的结束符，可能是boost的bug
+    ret = ss.str();
+    ret += "</boost_serialization>"; // streamstream序列化的时候，缺少了最终的结束符，可能是boost的bug
 
-    // std::cout << "Save XML TO string stream: __________________________________________________________________ \n"
-    //           << ret << std::endl;
+    std::cout << "Save XML TO string stream: __________________________________________________________________ \n"
+              << ret << std::endl;
 
-    // return ret;
+    return ret;
 }
 
 void save_file()

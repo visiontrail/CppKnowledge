@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="UTF_8" standalone="yes" ?>
 <!DOCTYPE boost_serialization>
 <boost_serialization signature="serialization::archive" version="17">
-    <m_plane_interfaces>
-        <m_plane_sub_interfaces>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>
-                <interface_name>ofp1</interface_name>
-                <sub_interface>1</sub_interface>
-            </item>
-        </m_plane_sub_interfaces>
-        <m_plane_ssh_ports>
-            <call_home_ssh_port>4334</call_home_ssh_port>
-            <server_ssh_port>830</server_ssh_port>
-        </m_plane_ssh_ports>
-        <m_plane_server_type>
-            <netconf_client_ip_type>ASSIGN_IP_BY_HAND</netconf_client_ip_type>
-            <netconf_client_ipaddr>
-                <count>2</count>
+    <mplane_info>
+        <m_plane_interfaces>
+            <m_plane_sub_interfaces>
+                <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                    <mplane_ipv4>172.21.6.113</mplane_ipv4>
-                    <mplane_type>O_RAN_DU</mplane_type>
-                    <port>4334</port>
+                    <interface_name>ofp1</interface_name>
+                    <sub_interface>1</sub_interface>
                 </item>
-                <item>
-                    <mplane_ipv4>172.21.8.98</mplane_ipv4>
-                    <mplane_type>O_RAN_DU</mplane_type>
-                    <port>4334</port>
-                </item>
-            </netconf_client_ipaddr>
-        </m_plane_server_type>
-    </m_plane_interfaces>
+            </m_plane_sub_interfaces>
+            <m_plane_ssh_ports>
+                <call_home_ssh_port>4334</call_home_ssh_port>
+                <server_ssh_port>830</server_ssh_port>
+            </m_plane_ssh_ports>
+            <m_plane_server_type>
+                <netconf_client_ip_type>ASSIGN_IP_BY_HAND</netconf_client_ip_type>
+                <netconf_client_ipaddr>
+                    <count>2</count>
+                    <item_version>0</item_version>
+                    <item>
+                        <mplane_ipv4>172.21.6.113</mplane_ipv4>
+                        <mplane_type>O_RAN_DU</mplane_type>
+                        <port>4334</port>
+                    </item>
+                    <item>
+                        <mplane_ipv4>172.21.8.98</mplane_ipv4>
+                        <mplane_type>O_RAN_DU</mplane_type>
+                        <port>4334</port>
+                    </item>
+                </netconf_client_ipaddr>
+            </m_plane_server_type>
+        </m_plane_interfaces>
+    </mplane_info>
 </boost_serialization>

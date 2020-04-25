@@ -101,7 +101,6 @@ typedef struct stru_m_plane_interfaces
     stru_m_plane_ssh_ports m_plane_ssh_ports;
     stru_m_plane_server_type m_plane_server_type;
 
-
     friend std::ostream &operator<<(std::ostream &out, stru_m_plane_interfaces &d)
     {
         out << "out stru_m_plane_interfaces";
@@ -116,6 +115,24 @@ typedef struct stru_m_plane_interfaces
         archive &BOOST_SERIALIZATION_NVP(m_plane_server_type);
     }
 } stru_m_plane_interfaces;
+
+typedef struct stru_mplane_info
+{
+    // 成员
+    stru_m_plane_interfaces m_plane_interfaces;
+
+    friend std::ostream &operator<<(std::ostream &out, stru_mplane_info &d)
+    {
+        out << "out stru_mplane_info";
+        return out;
+    }
+
+    template <class Archive>
+    void serialize(Archive &archive, const unsigned int version)
+    {
+        archive &BOOST_SERIALIZATION_NVP(m_plane_interfaces);
+    }
+} stru_mplane_info;
 
 
 // typedef struct stru_m_plane_interfaces
@@ -166,10 +183,10 @@ void load_file()
     std::ifstream file("netconf_archive.xml");
     boost::archive::xml_iarchive ia(file);
 
-    stru_m_plane_interfaces m_plane_interfaces;
-    ia >> BOOST_SERIALIZATION_NVP(m_plane_interfaces);
+    stru_mplane_info mplane_info;
+    ia >> BOOST_SERIALIZATION_NVP(mplane_info);
     
-    std::cout << m_plane_interfaces.m_plane_ssh_ports.call_home_ssh_port << std::endl;
+    std::cout << mplane_info.m_plane_interfaces.m_plane_ssh_ports.call_home_ssh_port << std::endl;
     
 }
 
