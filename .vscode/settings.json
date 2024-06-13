@@ -60,4 +60,5 @@
         "variant": "cpp"
     },
     "window.zoomLevel": -0.001,
+    "cmake.configureOnOpen": false,
 }

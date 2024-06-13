@@ -75,7 +75,10 @@ int ntp_gettime() {
         return -1;
     }
 
+
+    printf("NTP Transmit Time (seconds): %u\n", msg.trans_timestamp_secs);
     msg.trans_timestamp_secs = ntohl(msg.trans_timestamp_secs);
+    printf("NTP Transmit Time, After ntohl (seconds): %u\n", msg.trans_timestamp_secs);
     time_t txTm = (time_t)(msg.trans_timestamp_secs - NTP_TIMESTAMP_DELTA);
 
     struct tm *nowtm;
