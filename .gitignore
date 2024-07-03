@@ -41,3 +41,7 @@ ar--lib
 /STL_Lerarn.sdf
 /STL_Lerarn.opensdf
 /cmake-build-debug
+Linux/thread/C/pthread_mutithread_signal
+Linux/thread/C/pthread_mutithread_signal.dSYM/Contents/Info.plist
+Linux/thread/C/pthread_mutithread_signal.dSYM/Contents/Resources/DWARF/pthread_mutithread_signal
+Linux/thread/C/pthread_mutithread_signal.dSYM/Contents/Resources/Relocations/aarch64/pthread_mutithread_signal.yml

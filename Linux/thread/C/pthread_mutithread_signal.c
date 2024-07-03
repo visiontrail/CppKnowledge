@@ -14,7 +14,7 @@ void* thread_func(void* arg) {
 
     while (!ready) {
         printf("Thread %d waiting...\n", id);
-        pthread_cond_wait(&cond, &lock);
+        pthread_cond_wait(&cond, &lock); // wait will be release the mutex lock
     }
 
     printf("Thread %d awakened\n", id);
@@ -30,13 +30,18 @@ int main() {
         pthread_create(&threads[i], NULL, thread_func, &thread_ids[i]);
     }
 
-    // 模拟一些工作
+    // simulate some working process...
     sleep(1);
 
     pthread_mutex_lock(&lock);
     ready = 1;
-    pthread_cond_broadcast(&cond); // 唤醒所有线程
-    // pthread_cond_signal(&cond); // 唤醒某个线程
+
+    // awake all thread
+    // pthread_cond_broadcast(&cond); 
+    // or ....
+    // awake one of these three thread (beacuse of pthread_join, The program never exit)
+    pthread_cond_signal(&cond); 
+
     pthread_mutex_unlock(&lock);
 
     for (int i = 0; i < 3; ++i) {
