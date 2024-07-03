@@ -6,6 +6,7 @@
 ***************************************************************/
 #include <unistd.h>
 #include <pthread.h>
+#include <stdio.h>
  
 #define CONSUMERS_COUNT 4	
 #define PRODUCERS_COUNT 1
